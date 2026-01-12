@@ -1,0 +1,288 @@
+element.style {
+    visibility: visible;
+    animation-duration: 1000ms;
+    animation-delay: 200ms;
+    animation-name: bounceInUp;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* ================= SERVICE AREA ================= */
+
+.service-area {
+  position: relative;
+  background: #0b1437;
+  overflow: hidden;
+}
+
+/* spacing helpers (like pt-120 pb-120) */
+
+.pt-120 {
+  padding-top: 120px;
+}
+
+.pb-120 {
+  padding-bottom: 120px;
+}
+
+/* ================= BG SHAPE ================= */
+
+.service__shape {
+  position: absolute;
+  right: -120px;
+  top: 80px;
+  z-index: 1;
+}
+
+.sway_Y__animation {
+  animation: swayY 4s ease-in-out infinite alternate;
+}
+
+@keyframes swayY {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+/* ================= HEADER ================= */
+
+.service-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header h5 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffb703;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-one {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffb703;
+  color: #000;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-one:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ================= GRID FIX (BOOTSTRAP-LIKE) ================= */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.g-4 > * {
+  padding: 12px;
+}
+
+.col-lg-4 {
+  width: 33.3333%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+/* ================= SERVICE ITEM ================= */
+
+.service__item {
+  position: relative;
+  background: #111b45;
+  border-radius: 16px;
+  padding: 45px 35px;
+  height: 100%;
+  transition: 0.4s ease;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.service__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffb703, #ff7b00);
+  opacity: 0;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.service__item:hover::before,
+.service__item.active::before {
+  opacity: 1;
+}
+
+.service__item:hover,
+.service__item.active {
+  transform: translateY(-10px);
+}
+
+.service-shape {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  opacity: 0.15;
+}
+
+.service__icon {
+  width: 70px;
+  height: 70px;
+  background: #1a2560;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  transition: 0.3s ease;
+}
+
+.service__item:hover .service__icon,
+.service__item.active .service__icon {
+  background: #000;
+}
+
+.service__icon img {
+  max-width: 40px;
+}
+
+.service__item h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.service__item h4 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.service__item p {
+  color: #d0d4ff;
+  line-height: 1.7;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+  .col-lg-4 {
+    width: 50%;
+  }
+
+  .section-header h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 575px) {
+  .col-lg-4,
+  .col-md-6 {
+    width: 100%;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .service-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service__shape {
+    display: none;
+  }
+}
+
+/* ================= SERVICE GRID FIX ================= */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.row > div {
+  padding: 12px;
+}
+
+/* 3 items in one row on large screen */
+.col-lg-4 {
+  width: 33.3333%;
+}
+
+/* 2 items in one row on tablet */
+@media (max-width: 991px) {
+  .col-lg-4 {
+    width: 50%;
+  }
+}
+
+/* 1 item in one row on mobile */
+@media (max-width: 576px) {
+  .col-lg-4 {
+    width: 100%;
+  }
+}
+
+.service__item {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 14px;
+  height: 100%;
+  transition: 0.3s;
+  position: relative;
+}
+
+.service__item:hover,
+.service__item.active {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
