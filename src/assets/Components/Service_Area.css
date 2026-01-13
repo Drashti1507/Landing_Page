@@ -30,7 +30,7 @@
   right: -120px;
   top: 80px;
   animation: swayY 4s ease-in-out infinite alternate;
-  z-index: 1;
+  z-index: 0; /* FIXED */
 }
 
 @keyframes swayY {
@@ -45,6 +45,9 @@
 /* ================= HEADER ================= */
 
 .service-header-row {
+  position: relative; /* FIXED */
+  z-index: 3;         /* FIXED */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +68,6 @@
 }
 
 .section-header h2 {
-  /* color: #ffffff; */
   font-size: 42px;
   font-weight: 700;
 }
@@ -80,10 +82,12 @@
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .btn-one:hover {
-  background: #ffffff;
+  background: #0b1437; /* FIXED */
+  color: #ffffff;     /* FIXED */
 }
 
 /* ================= GRID ================= */
