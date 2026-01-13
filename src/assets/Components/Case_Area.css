@@ -1,0 +1,226 @@
+/* ================= CASE AREA ================= */
+
+.case-area {
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.pt-120 {
+  padding-top: 120px;
+}
+.pb-120 {
+  padding-bottom: 120px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+
+/* ================= HEADER ROW ================= */
+
+.case-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.section-header h5 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-one {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+  padding: 14px 26px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-one:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+}
+
+/* ================= SLIDER ================= */
+
+.case__slider {
+  padding: 0 60px;
+}
+
+/* ================= CASE ITEM ================= */
+
+.case__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.case__image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.case__item:hover img {
+  transform: scale(1.08);
+}
+
+/* ================= OVERLAY ================= */
+
+.case__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.case__item:hover::after {
+  opacity: 1;
+}
+
+/* ================= CONTENT ================= */
+
+.case__content {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  z-index: 2;
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.case__item:hover .case__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.primary-color {
+  color: #60a5fa;
+}
+
+.sm-font {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.case__content h3 {
+  margin-top: 5px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.case__content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.case__content a:hover {
+  color: #60a5fa;
+}
+
+/* ================= ARROW BUTTON ================= */
+
+.case__btn {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  width: 42px;
+  height: 42px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transform: scale(0);
+  transition: 0.4s ease;
+  text-decoration: none;
+}
+
+.case__item:hover .case__btn {
+  transform: scale(1);
+}
+
+.case__btn:hover {
+  background: #1e40af;
+}
+
+/* ================= PAGINATION ================= */
+
+.case__dot {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.case__dot .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #cbd5f5;
+  opacity: 1;
+}
+
+.case__dot .swiper-pagination-bullet-active {
+  background: #2563eb;
+  width: 25px;
+  border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+  .section-header h2 {
+    font-size: 32px;
+  }
+
+  .case__image img {
+    height: 350px;
+  }
+
+  .case__slider {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .case__image img {
+    height: 300px;
+  }
+}
