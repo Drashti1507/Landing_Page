@@ -30,7 +30,7 @@ function Banner_Area() {
     <section className="banner-area">
       {/* ===== TOP LINE ===== */}
       <div className="banner__line">
-        <img className="sway__animation" src={bannerLine} alt="shape" />
+        <img className="sway__animation" src={bannerLine} alt="line" />
       </div>
 
       {/* ===== SLIDER ===== */}
@@ -38,10 +38,10 @@ function Banner_Area() {
         className="banner__slider"
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
-        speed={3000}
+        speed={1500}
         loop={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ el: ".banner__dot", clickable: true }}
+        pagination={{ clickable: true }}
       >
         {slides.map((bg, index) => (
           <SwiperSlide key={index}>
@@ -59,10 +59,8 @@ function Banner_Area() {
         ))}
       </Swiper>
 
-      {/* ===== DOTS ===== */}
-      <div className="banner__dot-wrp">
-        <div className="banner__dot"></div>
-      </div>
+      {/* ===== DOT WRAPPER (for styling if needed) ===== */}
+      <div className="banner__dot-wrp"></div>
     </section>
   );
 }
@@ -118,8 +116,21 @@ function Shapes() {
 function BannerContent() {
   return (
     <div className="banner__content">
-      <h4 className="anim-right d1">Best IT SOLUTION Provider</h4>
-
+     <h4 className="anim-right d1">
+        <svg
+          className="banner__svg"
+          style={{ marginRight: "8px" }}
+          width="40"
+          height="16"
+          viewBox="0 0 40 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect className="banner-rect" x="0.5" y="0.5" width="25.6667" height="15" rx="7.5" />
+          <rect className="banner-rect" x="13.3334" y="0" width="25.6667" height="16" rx="8" />
+        </svg>
+        Best IT SOLUTION Provider
+      </h4>
       <h1 className="anim-right d2">
         Excellent IT Services <br />
         for Your Success
