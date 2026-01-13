@@ -270,7 +270,7 @@ p {
     padding: 15px 25px;
     background: var(--gradient-bg);
     font-weight: 600;
-    color: var(--white);
+    color: blue;
     transition: var(--transition);
     text-transform: capitalize;
     position: relative;
@@ -435,12 +435,12 @@ a {
 }
 
 /* ===== BUTTON ===== */
-.btn-one {
+/* .btn-one {
   padding: 15px 28px;
   background: linear-gradient(90deg, #ff7a18, #ffb347);
   color: #fff;
   font-weight: 600;
-}
+} */
 
 /* ===== SHAPES ===== */
 .banner__shape-left1 { position: absolute; top: 30px; left: 0; z-index: 4; }
