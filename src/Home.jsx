@@ -20,7 +20,7 @@ import Banner_Area from "./assets/JS_file/Banner_Area";
 import ServiceArea from "./assets/JS_file/Service_Area";
 import AboutArea from "./assets/JS_file/About_Area";
 import CounterArea from "./assets/JS_file/Counter_Area";
-
+import Case_Area from "./assets/JS_file/Case_Area";
 function Home() {
   return (
     <>
@@ -34,6 +34,7 @@ function Home() {
       <ServiceArea />
       <AboutArea />
       <CounterArea />
+      <Case_Area />
     </>
   );
 }
