@@ -1,0 +1,123 @@
+/* ================= BRAND AREA ================= */
+
+.brand-area {
+  position: relative;
+  background: hsl(233, 59%, 11%);
+  padding: 0;
+  overflow: hidden;
+}
+
+
+
+/* ================= CONTAINER ================= */
+
+.brand-area .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ================= BLUE STRIP ================= */
+/* 
+.brand__wrp {
+  position: relative;
+  background: linear-gradient(90deg, #3b6df3, #2f5edb);
+  padding: 14px 40px; 
+  overflow: hidden;
+} */
+/* .brand__wrp {
+  position: relative;
+  background: linear-gradient(90deg, #3b6df3, #2f5edb);
+  padding: 3px 15px;   
+  overflow: hidden;
+} */
+
+.brand__wrp {
+    padding: 65px;
+    background: var(--gradient-bg);
+    margin-top: -85px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ================= CIRCUIT SHAPE ================= */
+
+.brand__shape {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brand__shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= SLIDER ================= */
+
+.brand__slider {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= BRAND LOGOS ================= */
+
+.brand__image {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand__image img {
+  max-height: 26px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+  transition: 0.3s ease;
+}
+
+.brand__image img:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .brand__wrp {
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand__wrp {
+    padding: 10px 16px;
+  }
+
+  .brand__image {
+    height: 34px;
+  }
+
+  .brand__image img {
+    max-height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand__image {
+    height: 30px;
+  }
+
+  .brand__image img {
+    max-height: 20px;
+  }
+}

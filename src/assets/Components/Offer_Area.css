@@ -213,3 +213,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* 
+
+.brand__wrp {
+    padding: 65px;
+    background: var(--gradient-bg);
+    margin-top: -85px;
+    position: relative;
+    z-index: 1;
+}
+ */
+/* 
+.brand__shape {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+} */
+
+/* img, svg {
+    vertical-align: middle;
+} */
+
+/* .swiper-pointer-events {
+    touch-action: pan-y;
+} */
+/* .swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+} */
