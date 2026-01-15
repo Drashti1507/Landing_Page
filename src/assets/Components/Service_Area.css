@@ -210,3 +210,16 @@
     display: none;
   }
 }
+
+
+.service-area,
+.service-container,
+.service-header-row,
+.section-header,
+.section-header h5,
+.section-header h2,
+.service__item,
+.service__item h4,
+.service__item p {
+  text-align: left;
+}
