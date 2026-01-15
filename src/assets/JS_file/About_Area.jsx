@@ -67,13 +67,13 @@ function AboutArea() {
               </h5>
 
               <h2>
-                We Strive To Offer <br />
-                Intelligent Business Solutions
+                We Strive To Offer Intelligent <br />
+                Business Solutions
               </h2>
 
               <p>
-                Aonsectetur adipiscing elit aenean scelerisque augue vitae
-                consequat aisque eget congue velit in cursus sodales the turpis
+                Aonsectetur adipiscing elit aenean scelerisque augue vitae consequat <br/>
+                aisque eget congue velit in cursus sodales the turpis <br/>
                 euismod quis sapien the condimentum nec lorem nulla augue.
               </p>
             </div>
@@ -86,7 +86,7 @@ function AboutArea() {
                 </div>
                 <div>
                   <h4>Best Services</h4>
-                  <p>Scelerisque augue the consequat sodales</p>
+                  <p>Scelerisque augue <br/> the consequat <br/> sodales</p>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ function AboutArea() {
                 </div>
                 <div>
                   <h4>24/7 Call Support</h4>
-                  <p>Scelerisque augue the consequat sodales</p>
+                  <p>Scelerisque augue <br/> the consequat <br/>sodales</p>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ function AboutArea() {
             <div className="about-bottom">
 
               <a href="/about" className="btn-one">
-                Explore More →
+                Explore More <i className="fa-solid fa-arrow-right-long"></i>
               </a>
 
               <div className="founder">
