@@ -25,19 +25,18 @@
 //   return (
 //     <section className="case-area pt-120 pb-120">
 //       <div className="container">
-//         <div className="d-flex flex-wrap gap-4 align-items-center justify-content-between mb-60">
+//         {/* ===== HEADER ROW ===== */}
+//         <div className="case-header-row">
 //           <div className="section-header">
 //             <h5>
 //               <img className="me-1" src={sectionIcon} alt="icon" />
-//               FROM OUR CASE studies
+//               FROM OUR CASE STUDIES
 //             </h5>
-//             <h2>
-//               We Delivered Best Solution
-//             </h2>
+//             <h2>We Delivered Best Solution</h2>
 //           </div>
 
 //           <a href="/case" className="btn-one">
-//             View All Case <i className="fa-regular fa-arrow-right-long"></i>
+//             View All Case <i className="fa-solid fa-arrow-right-long"></i>
 //           </a>
 //         </div>
 //       </div>
@@ -46,45 +45,51 @@
 //       <Swiper
 //         modules={[Pagination, Autoplay]}
 //         spaceBetween={24}
-//         slidesPerView={4}
 //         loop={true}
-//         autoplay={{ delay: 3000, disableOnInteraction: false }}
+//         autoplay={{ delay: 3500, disableOnInteraction: false }}
 //         pagination={{ clickable: true, el: ".case__dot" }}
+
+//         /*  KEY SETTINGS */
+//         slidesPerGroup={1}
+
 //         breakpoints={{
-//           0: { slidesPerView: 1 },
-//           576: { slidesPerView: 2 },
-//           992: { slidesPerView: 3 },
-//           1200: { slidesPerView: 4 },
+//           0: {
+//             slidesPerView: 1,
+//           },
+//           576: {
+//             slidesPerView: 2,
+//           },
+//           992: {
+//             slidesPerView: 3,   // show 3
+//           },
 //         }}
 //         className="case__slider"
 //       >
 //         {cases.map((item, index) => (
 //           <SwiperSlide key={index}>
 //             <div className="case__item">
-//               <div className="image case__image">
+//               <div className="case__image">
 //                 <img src={item.img} alt="case" />
 //               </div>
 
 //               <div className="case__content">
-//                 <span className="primary-color sm-font">{item.tag}</span>
+//                 <span>{item.tag}</span>
 //                 <h3>
-//                   <a href="/case-details" className="text-white primary-hover">
-//                     {item.title}
-//                   </a>
+//                   <a href="/case-details">{item.title}</a>
 //                 </h3>
 //               </div>
 
 //               <a href="/case-details" className="case__btn">
-//                 <i className="fa-regular fa-arrow-right"></i>
+//                 <i className="fa-solid fa-arrow-right"></i>
 //               </a>
 //             </div>
 //           </SwiperSlide>
 //         ))}
 //       </Swiper>
 
-//       {/* pagination dots */}
+//       {/* ===== DOTS ===== */}
 //       <div className="mt-60 text-center">
-//         <div className="dot case__dot"></div>
+//         <div className="case__dot"></div>
 //       </div>
 //     </section>
 //   );
@@ -119,8 +124,8 @@ const cases = [
 function CaseArea() {
   return (
     <section className="case-area pt-120 pb-120">
+      {/* ===== HEADER ===== */}
       <div className="container">
-        {/* ===== HEADER ROW ===== */}
         <div className="case-header-row">
           <div className="section-header">
             <h5>
@@ -131,51 +136,53 @@ function CaseArea() {
           </div>
 
           <a href="/case" className="btn-one">
-            View All Case <i className="fa-regular fa-arrow-right-long"></i>
+            View All Case <i className="fa-solid fa-arrow-right-long"></i>
           </a>
         </div>
       </div>
 
-      {/* ====== SWIPER ====== */}
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        spaceBetween={24}
-        loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        pagination={{ clickable: true, el: ".case__dot" }}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          576: { slidesPerView: 2 },
-          992: { slidesPerView: 3 },
-          1200: { slidesPerView: 4 },
-        }}
-        className="case__slider"
-      >
-        {cases.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="case__item">
-              <div className="case__image">
-                <img src={item.img} alt="case" />
+      {/* ===== SLIDER ===== */}
+      <div className="container">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={24}
+          loop={true}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          pagination={{ clickable: true, el: ".case__dot" }}
+          slidesPerGroup={1}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            992: { slidesPerView: 3 },
+          }}
+          className="case__slider"
+        >
+          {cases.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="case__item">
+                <div className="case__image">
+                  <img src={item.img} alt="case" />
+                </div>
+
+                <div className="case__content">
+                  <span>{item.tag}</span>
+                  <h3>
+                    <a href="/case-details">{item.title}</a>
+                  </h3>
+                </div>
+
+                <a href="/case-details" className="case__btn">
+                  <i className="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-              <div className="case__content">
-                <span className="primary-color sm-font">{item.tag}</span>
-                <h3>
-                  <a href="/case-details">{item.title}</a>
-                </h3>
-              </div>
-
-              <a href="/case-details" className="case__btn">
-                <i className="fa-regular fa-arrow-right"></i>
-              </a>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* pagination dots */}
-      <div className="mt-60 text-center">
-        <div className="case__dot"></div>
+        {/* DOTS */}
+        <div className="case__dot-wrap">
+          <div className="case__dot"></div>
+        </div>
       </div>
     </section>
   );
