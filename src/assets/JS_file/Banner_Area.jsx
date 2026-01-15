@@ -96,7 +96,7 @@ function Banner_Area() {
 
             {/* content */}
             <div className="container">
-              <div className="banner__content">
+              <div className="banner__content"><br/><br/>
 
                 <h4
                   data-animation="slideInRight"
