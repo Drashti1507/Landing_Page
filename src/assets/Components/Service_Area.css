@@ -150,8 +150,15 @@
   transition: 0.3s;
 }
 
-.service__item:hover .service__icon {
-  background: rgba(255, 255, 255, 0.25);
+.service__icon img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.service__item:hover .service__icon,
+.service__item.active .service__icon {
+  background: #ffffff;
 }
 
 /* text default */
