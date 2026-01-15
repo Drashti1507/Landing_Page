@@ -30,7 +30,7 @@ function ServiceArea() {
           </div>
 
           <a href="/service" className="btn-one">
-            View All Services →
+            View All Services <i className="fa-solid fa-arrow-right-long"></i>
           </a>
         </div>
 
