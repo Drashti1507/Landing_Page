@@ -243,3 +243,12 @@ h2 {
 .section-header h2 {
     text-transform: capitalize;
 }
+
+.about-right,
+.section-header,
+.section-header h2,
+.section-header p,
+.feature-item h4,
+.feature-item p {
+  text-align: left;
+}
