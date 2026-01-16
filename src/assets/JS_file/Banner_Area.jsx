@@ -96,7 +96,7 @@ function Banner_Area() {
 
             {/* content */}
             <div className="container">
-              <div className="banner__content">
+              <div className="banner__content"><br/><br/>
 
                 <h4
                   data-animation="slideInRight"
@@ -118,7 +118,7 @@ function Banner_Area() {
                   Best IT Solution Provider
                 </h4>
 
-                <h1
+                {/* <h1
                   data-animation="slideInRight"
                   data-duration="2s"
                   data-delay=".5s"
@@ -126,7 +126,18 @@ function Banner_Area() {
                 >
                   Excellent IT Services <br />
                   for Your Success
-                </h1>
+                </h1> */}
+
+                  <h1
+                    data-animation="slideInRight"
+                    data-duration="2s"
+                    data-delay=".5s"
+                    className="text-white animated"
+                  >
+                    <span style={{ whiteSpace: "nowrap" }}>Excellent IT Services</span>
+                    <br />
+                    for Your Success
+                  </h1>
 
                 <p
                   data-animation="slideInRight"
@@ -146,7 +157,8 @@ function Banner_Area() {
                   data-delay=".9s"
                   className="btn-one mt-60 animated"
                 >
-                  Explore More <i className="fa-regular fa-arrow-right-long"></i>
+                  Explore More <i className="fa-solid fa-arrow-right-long"></i>
+
                 </a>
 
               </div>
@@ -154,12 +166,16 @@ function Banner_Area() {
 
           </SwiperSlide>
         ))}
+
+         <div className="banner__dot-wrp">
+          <div className="dot-light banner__dot"></div>
+        </div>
       </Swiper>
 
       {/* dots */}
-      <div className="banner__dot-wrp">
+      {/* <div className="banner__dot-wrp">
         <div className="dot-light banner__dot"></div>
-      </div>
+      </div> */}
     </section>
   );
 }

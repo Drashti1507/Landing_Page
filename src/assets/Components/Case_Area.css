@@ -1,226 +1,185 @@
-/* ================= CASE AREA ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.case-area {
-  background: #ffffff;
-}
+.pt-120 { padding-top: 120px; }
+.pb-120 { padding-bottom: 120px; }
+.mt-60 { margin-top: 15px; } 
+
+
+.text-center { text-align: center; }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 15px;
+    width: 100%;
+    padding: 0 12px;
+    margin: auto;
 }
 
-.pt-120 {
-  padding-top: 120px;
-}
-.pb-120 {
-  padding-bottom: 120px;
-}
-.mt-60 {
-  margin-top: 60px;
-}
+@media (min-width: 576px){.container{max-width:540px}}
+@media (min-width: 768px){.container{max-width:720px}}
+@media (min-width: 992px){.container{max-width:960px}}
+@media (min-width:1200px){.container{max-width:1140px}}
 
-/* ================= HEADER ROW ================= */
+.case-area { overflow: hidden; }
 
-.case-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
+/* ===== HEADER ===== */
+
+.case-header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+    gap:20px;
 }
 
-.section-header h5 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #2563eb;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+.section-header h5{
+    color:#1e6cff;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    margin-bottom:8px;
 }
 
-.section-header h2 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.2;
+.section-header h2{ font-weight:700; }
+
+@media(max-width:767px){
+  .case-header-row{flex-direction:column;align-items:flex-start}
 }
 
-/* ================= BUTTON ================= */
+/* ===== BUTTON ===== */
 
-.btn-one {
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
-  color: #fff;
-  padding: 14px 26px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s ease;
-  white-space: nowrap;
+.btn-one{
+    padding:14px 26px;
+    background:linear-gradient(90deg,#1e6cff,#3f8cff);
+    color:#fff;
+    transition:.3s;
+    text-decoration:none;
+    font-weight:600;
+}
+.btn-one:hover{background:#000}
+
+/* ===== SLIDER ===== */
+
+.case__slider{
+    padding: 0;
 }
 
-.btn-one:hover {
-  background: linear-gradient(90deg, #1e40af, #2563eb);
+.case-area .swiper{
+    padding-bottom: 10px; /* small space before dots */
 }
 
-/* ================= SLIDER ================= */
+/* ===== CARD ===== */
 
-.case__slider {
-  padding: 0 60px;
+.case__item{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+     width:100%;
+
 }
 
-/* ================= CASE ITEM ================= */
-
-.case__item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
+.case__image img{
+    width:100%;
+    display:block;
+    transition:.5s;
 }
 
-.case__image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+.case__item:hover img{transform:scale(1.08)}
+
+.case__item::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.3),transparent);
+    z-index:1;
 }
 
-.case__item:hover img {
-  transform: scale(1.08);
+/* ===== CONTENT ===== */
+
+.case__content{
+    position:absolute;
+    left:22px;
+    right:22px;        /* keeps content within card width */
+    bottom:28px;
+    z-index:2;
+    text-align:left;  /* force left alignment */
 }
 
-/* ================= OVERLAY ================= */
 
-.case__item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
-  );
-  opacity: 0;
-  transition: 0.4s ease;
+.case__content span{
+    display:inline-block;
+    margin-bottom:8px;
+    color:#1e6cff;
+    font-size:13px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
-.case__item:hover::after {
-  opacity: 1;
+.case__content h3{ margin:0; }
+
+.case__content h3 a{
+    color:#fff;
+    font-size:24px;          /* bigger title */
+    font-weight:800;        /* bold */
+    letter-spacing:0.4px;   /* stylish spacing */
+    line-height:1.3;
+    transition:.3s;
+    text-decoration:none;
+    text-shadow:0 4px 12px rgba(0,0,0,0.6); /* premium look */
 }
 
-/* ================= CONTENT ================= */
+.case__content h3 a:hover{color:#1e6cff}
 
-.case__content {
-  position: absolute;
-  left: 25px;
-  bottom: 25px;
-  z-index: 2;
-  color: #fff;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: 0.4s ease;
+/* ===== ARROW ===== */
+
+.case__btn{
+    position:absolute;
+    right:22px;
+    bottom:28px;
+    z-index:2;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(15px);
+    transition:.4s;
 }
 
-.case__item:hover .case__content {
-  transform: translateY(0);
-  opacity: 1;
+.case__btn i{
+    width:44px;
+    height:44px;
+    background:#1e6cff;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    border-radius:4px;
 }
 
-.primary-color {
-  color: #60a5fa;
+.case__item:hover .case__btn{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
 }
 
-.sm-font {
-  font-size: 14px;
-  font-weight: 600;
+/* ===== DOTS ===== */
+
+.case__dot{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:-25px;
+}
+.case__dot .swiper-pagination-bullet{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    border:1px solid #1e6cff;
+    background:transparent;
+    opacity:1;
 }
 
-.case__content h3 {
-  margin-top: 5px;
-  font-size: 22px;
-  font-weight: 700;
+.case__dot .swiper-pagination-bullet-active{
+    background:#1e6cff;
 }
 
-.case__content a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.case__content a:hover {
-  color: #60a5fa;
-}
-
-/* ================= ARROW BUTTON ================= */
-
-.case__btn {
-  position: absolute;
-  right: 25px;
-  bottom: 25px;
-  width: 42px;
-  height: 42px;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transform: scale(0);
-  transition: 0.4s ease;
-  text-decoration: none;
-}
-
-.case__item:hover .case__btn {
-  transform: scale(1);
-}
-
-.case__btn:hover {
-  background: #1e40af;
-}
-
-/* ================= PAGINATION ================= */
-
-.case__dot {
-  display: inline-flex;
-  gap: 10px;
-}
-
-.case__dot .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #cbd5f5;
-  opacity: 1;
-}
-
-.case__dot .swiper-pagination-bullet-active {
-  background: #2563eb;
-  width: 25px;
-  border-radius: 10px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 991px) {
-  .section-header h2 {
-    font-size: 32px;
-  }
-
-  .case__image img {
-    height: 350px;
-  }
-
-  .case__slider {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 575px) {
-  .case__image img {
-    height: 300px;
-  }
-}

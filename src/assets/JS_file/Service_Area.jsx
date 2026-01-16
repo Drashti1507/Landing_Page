@@ -30,7 +30,7 @@ function ServiceArea() {
           </div>
 
           <a href="/service" className="btn-one">
-            View All Services →
+            View All Services <i className="fa-solid fa-arrow-right-long"></i>
           </a>
         </div>
 
@@ -49,8 +49,8 @@ function ServiceArea() {
             <h4>IT Management</h4>
 
             <p>
-              Pellentesque nec the condimentum nec lorem nulla augue est
-              ultricies ac iaculis ut euismod quis sapien.
+              Pellentesque nec the condimentum nec <br/> lorem nulla augue est
+              ultricies ac iaculis <br/> ut euismod quis sapien.
             </p>
           </div>
 
@@ -67,8 +67,8 @@ function ServiceArea() {
             <h4>Cyber Security</h4>
 
             <p>
-              Pellentesque nec the condimentum nec lorem nulla augue est
-              ultricies ac iaculis ut euismod quis sapien.
+               Pellentesque nec the condimentum nec <br/> lorem nulla augue est
+              ultricies ac iaculis <br/> ut euismod quis sapien.
             </p>
           </div>
 
@@ -85,8 +85,8 @@ function ServiceArea() {
             <h4>Web Development</h4>
 
             <p>
-              Pellentesque nec the condimentum nec lorem nulla augue est
-              ultricies ac iaculis ut euismod quis sapien.
+               Pellentesque nec the condimentum nec <br/> lorem nulla augue est
+              ultricies ac iaculis <br/> ut euismod quis sapien.
             </p>
           </div>
         </div>
