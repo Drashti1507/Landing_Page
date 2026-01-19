@@ -29,6 +29,7 @@ const slides = [bg1, bg2, bg3];
 
 function Banner_Area() {
   return (
+    <>
     <section className="banner-area">
       {/* top line */}
       <div className="banner__line">
@@ -37,7 +38,7 @@ function Banner_Area() {
 
       {/* swiper */}
       <Swiper
-        className="swiper banner__slider"
+        className="swiperb banner__slider"
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
         speed={3000}
@@ -177,6 +178,7 @@ function Banner_Area() {
         <div className="dot-light banner__dot"></div>
       </div> */}
     </section>
+    </>
   );
 }
 

@@ -36,7 +36,7 @@ img {
     touch-action: pan-y;
 }
 
-.swiper {
+.swiperb {
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -102,13 +102,13 @@ img {
     left: 0;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
 
     .banner__shape-right2,
     .banner__shape-right1 {
         display: none;
     }
-}
+} */
 
 .banner__shape-right2 {
     position: absolute;
@@ -456,12 +456,6 @@ a {
 }
 
 /* ===== CONTENT ===== */
-/* .container {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-} */
 .banner-area .container {
     position: relative;
     z-index: 5;
@@ -729,4 +723,99 @@ a {
   .banner__slider .swiper-slide-active .slide-bg {
     transform: scale(1.08) !important;
   }
+}
+
+
+/* ================= BANNER — iPAD MINI ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* keep full height but avoid overflow */
+  .banner-area,
+  .swiperb,
+  .swiper-slide
+   {
+    min-height: 55vh;
+  }
+
+  /* container alignment */
+  .banner-area .container {
+    justify-content: left !important;
+    text-align: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    margin-bottom: -10px;
+  }
+
+  /* content width & spacing */
+  .banner__content {
+    max-width: 600px;
+    padding: 0;
+  }
+
+  /* headings */
+  .banner__content h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .banner__content h1 {
+    font-size: 52px !important;
+    line-height: 62px !important;
+  }
+
+  .banner__content p {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 18px 0;
+  }
+
+  /* button */
+  .banner__content .btn-one {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
+
+  /* dots position */
+  .banner__dot-wrp {
+    bottom: 90px;
+  }
+
+  /* reduce zoom for performance on tablets */
+  .banner__slider .swiper-slide-active .slide-bg {
+    transform: scale(1.12) !important;
+  }
+
+  /* hide heavy shapes that overlap on tablet */
+  .banner__right-line1,
+  .banner__right-line2,
+  .banner__right-line3,
+  .banner__right-line4 {
+    display: visible;
+  }
+
+  /* keep corner shapes but move slightly */
+  .banner__shape-left1 { top: 20px; }
+  .banner__shape-left2 { top: 45px; }
+  .banner__shape-left3 { bottom: -10px; }
+
+  .banner__shape-right1,
+  .banner__shape-right2 {
+    bottom: -10px;
+  }
+
+  /* moving line */
+  .banner__line {
+    bottom: 20%;
+    left: 45%;
+    transform: scale(0.9);
+  }
+}
+@media (min-width: 629px) and (max-width: 693px) {
+  .banner-area,
+  .swiperb,
+  .swiper-slide
+   {
+    min-height: 75vh;
+  }
+
 }

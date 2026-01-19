@@ -16,6 +16,7 @@ import aboutInfoImg from "../images/about-info.png";
 
 function AboutArea() {
   return (
+    <>
     <section className="about-area">
       {/* bottom shape */}
       <div className="about__shape">
@@ -123,6 +124,7 @@ function AboutArea() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

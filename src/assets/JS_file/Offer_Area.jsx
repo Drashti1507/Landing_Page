@@ -127,12 +127,12 @@ const OfferArea = () => {
               breakpoints={{
                 0: { slidesPerView: 2 },
                 576: { slidesPerView: 3 },
-                768: { slidesPerView: 4 },
+                768: { slidesPerView: 3 },
                 992: { slidesPerView: 5 },
               }}
             >
               {brands.map((img, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="brand-slide">
                   <div className="brand__image">
                     <img src={img} alt={`brand-${index + 1}`} />
                   </div>

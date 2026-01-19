@@ -209,6 +209,7 @@
   .offer-cards {
     grid-template-columns: 1fr;
   }
+   .brand__image img { max-height: 20px; }
 }
 /* ================================================= */
 /* ================= BRAND AREA ==================== */
@@ -252,20 +253,6 @@
   width: auto;
 }
 
-/* .brand__shape {
-   position: absolute;
-  right: -30px;
-  top: -30px;
-  height: 60%;
-  opacity: 0.15;
-  z-index: 1;
-}
-
-.brand__shape img {
-  height: 100%;
-  width: auto;
-} */
-
 /* ================= SLIDER ================= */
 
 .brand__slider {
@@ -277,11 +264,17 @@
   align-items: center;
 }
 
-.brand__slider .swiper-slide {
+/* .brand__slider .swiper-slide {
   height: 100% !important;
   display: flex;
   align-items: center;
    justify-content: center;
+} */
+ .brand__slider .brand-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ================= BRAND LOGO ================= */
@@ -416,8 +409,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 550px;
-    padding-top: -90px;
+    padding-bottom: 580px;
+    padding-top: -100px;
     font-family:kumba, sans-serif;
   }
   /* logo */
@@ -425,5 +418,115 @@
     max-height: 22px;
     width: auto;
     display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ---------- OFFER AREA ---------- */
+
+  .offer-area {
+    padding: 90px 0 120px;
+  }
+
+  .offer-area .container {
+    max-width: 92%;
+  }
+
+  .offer-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 45px;
+    gap: 20px;
+  }
+
+  .offer-header h2 {
+    font-size: 32px;
+  }
+
+  .section-header h5 {
+    font-size: 13px;
+  }
+
+  .offer-btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .offer-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .offer-card {
+    padding: 38px 16px 30px;
+    border-radius: 12px;
+  }
+
+  .offer-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+
+  .offer-icon svg {
+    font-size: 28px;
+  }
+
+  .offer-card h4 {
+    font-size: 15px;
+  }
+
+
+  /* ---------- BRAND AREA ---------- */
+
+  .brand-area {
+    margin-top: -50px;
+    /* height: 100%; */
+  }
+
+  .brand-area .container {
+    max-width: 95%;
+  }
+
+  .brand__wrp {
+    position: relative;
+    height: 150px;
+    border-radius: 12px;
+  }
+
+  .brand__shape {
+    right: 0;
+    top: 0;
+    opacity: 0.25;
+  }
+
+  .brand__slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+     /* logo wrapper */
+  .brand__image {
+    height: -50%;
+    padding: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 580px;
+    padding-top: -150px;
+    font-family:kumba, sans-serif;
+  }
+
+  .brand__image img {
+    max-height: 45px;
+    width: auto;
+    display: block;
+    /* gap: 10px; */
+  }
+
+  .brand__slider .brand-slide {
+    height: 100%;
+    /* min-height: 95vh; */
   }
 }
