@@ -1,8 +1,9 @@
 .about-area {
   position: relative;
   background: #f8faff;
-  padding: 120px 0 200px;
+  padding: 20px 0 200px;
   overflow: hidden;
+  font-family: kumbh-sans, sans-serif;
 }
 
 /* bottom wave */
@@ -251,4 +252,132 @@ h2 {
 .feature-item h4,
 .feature-item p {
   text-align: left;
+}
+
+/* ================= iPHONE SE FIX (ABOUT AREA) ================= */
+@media (max-width: 375px) {
+
+  .about-area {
+    padding: 20px 0 120px;
+   justify-content: left;
+  }
+
+  /* stack layout */
+  .about-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ---------- IMAGES ---------- */
+
+  .about-images {
+    max-width: 100%;
+  }
+
+  .big-image {
+    width: 90%;
+    margin: auto;
+  }
+
+  .sm-image {
+    width: 80%;
+    right: 35px;
+    bottom: 50px;
+    left: 35px;
+    top : 50px ;
+  }
+
+  .circle-shape {
+    display: none; /* hide decorative circle */
+  }
+
+  .play-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+  }
+
+  /* ---------- CONTENT ---------- */
+
+  .about-right,
+  .section-header,
+  .section-header h2,
+  .section-header p,
+  .feature-item h4,
+  .feature-item p {
+    text-align: left !important;
+  }
+
+  .section-header h5 {
+    justify-content: left;
+    font-size: 13px;
+  }
+
+  .section-header h2 {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  /* ---------- FEATURES ---------- */
+
+  .about-features {
+    grid-template-columns: 2fr;
+    gap: 22px;
+    margin-top: 25px;
+  }
+
+  .feature-item {
+    flex-direction :row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature-item .icon {
+    width: 80px;
+    height: 60px;
+  }
+
+  /* ---------- BOTTOM AREA ---------- */
+
+  .about-bottom {
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .btn-one {
+    padding: 10px 22px;
+    font-size: 14px;
+    
+  }
+
+  .founder {
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    flex-direction: row;
+  }
+
+  .founder h5{
+    font-size: 16px;
+    font-style: bold;
+  }
+
+  .founder span{
+    font-size: 14px;
+  }
+
+  .founder img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about__shape {
+    display: none; /* hide bottom wave on very small screens */
+  }
 }

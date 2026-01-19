@@ -146,7 +146,7 @@ function Banner_Area() {
                   className="mt-20 animated"
                 >
                   Consectetur adipiscing elit aenean scelerisque at augue vitae consequat
-                  <br />
+                 
                   quisque eget congue velit in cursus leo sed sodales est eget turpis.
                 </p>
 

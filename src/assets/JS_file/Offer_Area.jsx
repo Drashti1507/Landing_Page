@@ -73,7 +73,7 @@ const OfferArea = () => {
               </h5>
 
               <h2 className="text-white">
-                Enhance And Pioneer Using <br /> Technology Trends
+                Enhance And Pioneer Using Technology Trends
               </h2>
             </div>
 

@@ -234,9 +234,8 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-  height: 250px;
+  height: 130px;
 }
-
 /* ================= BG SHAPE ================= */
 
 .brand__shape {
@@ -279,7 +278,7 @@
 }
 
 .brand__slider .swiper-slide {
-  height: auto !important;
+  height: 100% !important;
   display: flex;
   align-items: center;
    justify-content: center;
@@ -291,13 +290,15 @@
   display: flex;
   align-items: center;     /* vertical center */
   justify-content: center; /* horizontal center */
-  height: -60%;            /* take full height of swiper slide */
+  height: -50%;            /* take full height of swiper slide */
   padding: 0;              /* remove extra space */
-  padding-bottom: 350px;
+  padding-bottom: 450px;
+  padding-top: -90px;
+  font-family:kumba, sans-serif;
 }
 
 .brand__image img {
-  max-height: 40px;        /* keep logo small */
+  max-height: 30px;        /* keep logo small */
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -317,5 +318,102 @@
 
   .brand__image img {
     max-height: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  /* ---------- OFFER AREA ---------- */
+
+  .offer-area {
+    padding: 70px 0 100px;
+  }
+
+  .offer-header {
+    margin-bottom: 35px;
+    gap: 12px;
+  }
+
+  .offer-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .section-header {
+    text-align: left;
+  }
+
+  .section-header h5 {
+    justify-content: left;
+    font-size: 12px;
+  }
+
+  .offer-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .offer-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offer-card {
+    padding: 32px 16px 26px;
+  }
+
+  .offer-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .offer-icon svg {
+    font-size: 24px;
+  }
+
+  .offer-card h4 {
+    font-size: 14px;
+  }
+
+  /* ---------- BRAND AREA ---------- */
+
+  .brand-area {
+    margin-top: -40px;
+  }
+
+  .brand__wrp {
+    height: 130px;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+
+  /* show background shape properly */
+  .brand__shape {
+    display: block;   
+    right: -40px;
+    top: 0;
+    opacity: 0.2;
+  }
+
+  .brand__shape img {
+    height: 100%;
+    width: auto;
+  }
+
+  .brand__image {
+    height: -50%;
+    padding: 0;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: -90px;
+    font-family:kumba, sans-serif;
+  }
+      .brand__image img {
+    max-height: 22px;
+    width: auto;
+    display: block;
   }
 }

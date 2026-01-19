@@ -183,3 +183,59 @@
     background:#1e6cff;
 }
 
+/* ================= CASE AREA — SMALL MOBILE (iPhone SE) ================= */
+@media (max-width: 375px) {
+
+  .pt-120 { padding-top: 70px; }
+  .pb-120 { padding-bottom: 70px; }
+
+  .case-header-row {
+    margin-bottom: 35px;
+    gap: 14px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .btn-one {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  /* slider cards */
+  .case__content {
+    left: 14px;
+    right: 14px;
+    bottom: 18px;
+  }
+
+  .case__content span {
+    font-size: 11px;
+  }
+
+  .case__content h3 a {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .case__btn i {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .case__dot {
+    margin-top: -215px;
+    margin-bottom: 10px;
+  }
+  
+}
+@media (hover: none) {
+  .case__btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}

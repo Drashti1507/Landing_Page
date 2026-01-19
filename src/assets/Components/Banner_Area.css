@@ -2,6 +2,8 @@
 .banner-two-area {
     overflow: hidden;
     position: relative;
+  font-family: kumbh-sans, sans-serif;
+
 }
 
 .banner__line {
@@ -10,13 +12,6 @@
     left: 33%;
     z-index: 2;
 }
-
-.banner-area,
-.banner-two-area {
-    overflow: hidden;
-    position: relative;
-}
-
 
 div {
     display: block;
@@ -476,6 +471,7 @@ a {
     justify-content: flex-start; /* left side */
 }
 
+
 .banner__content h4 {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -666,4 +662,71 @@ a {
 /* active = blue */
 .banner__dot .swiper-pagination-bullet-active {
   background: #1e6cff;          /* blue */
+}
+
+/* ================= iPHONE SE FIX (very small screens) ================= */
+@media (max-width: 375px) {
+
+  /* center content */
+  .banner-area .container {
+    justify-content: left !important;
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: -10px;
+  }
+
+  .banner__content {
+    text-align: left;
+    max-width: 100%;
+    padding: 90px 0 60px;
+  }
+
+  /* smaller heading */
+  .banner__content h1 {
+    font-size: 34px !important;
+    line-height: 42px !important;
+  }
+
+  .banner__content h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .banner__content p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* button center + smaller */
+  .banner__content .btn-one {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  /* hide all shapes on very small screens */
+  .banner__shape-left1,
+  .banner__shape-left2,
+  .banner__shape-left3,
+  .banner__shape-right1,
+  .banner__shape-right2,
+  .banner__right-line1,
+  .banner__right-line2,
+  .banner__right-line3,
+  .banner__right-line4,
+  .banner__line {
+    display: none !important;
+  }
+
+  /* dots closer to bottom */
+  .banner__dot-wrp {
+    bottom: 15px;
+  }
+
+  /* reduce background zoom to avoid blur */
+  .banner__slider .swiper-slide-active .slide-bg {
+    transform: scale(1.08) !important;
+  }
 }
