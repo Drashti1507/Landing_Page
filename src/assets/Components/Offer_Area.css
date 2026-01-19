@@ -2,10 +2,10 @@
 
 .offer-area {
   background: radial-gradient(circle at center, #1b2b6b 0%, #050b2e 70%);
-  padding: 120px 0 180px;
+  padding: 120px 0 140px;   /* reduced bottom padding */
   color: #fff;
   position: relative;
-  overflow: hidden;
+  overflow: visible;       /* IMPORTANT: allow brand area to show */
 }
 
 /* ===== CONTAINER ===== */
@@ -90,7 +90,7 @@
 }
 
 .offer-btn:hover {
-  background: linear-gradient(90deg, #5a8cff, #3c72fc);
+  background: #000;
 }
 
 /* ================= CARDS ================= */
@@ -134,16 +134,13 @@
 
 .shape-top {
   top: 0;
-  right: 0;   /* move to right */
-  left: auto;
+  right: 0;
 }
 
 .shape-bottom {
   bottom: 0;
-  left: 0;    /* move to left */
-  right: auto;
+  left: 0;
 }
-
 
 .offer-card:hover .shape-top,
 .offer-card:hover .shape-bottom {
@@ -185,7 +182,7 @@
   z-index: 3;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE OFFER ================= */
 
 @media (max-width: 1200px) {
   .offer-cards {
@@ -213,40 +210,112 @@
     grid-template-columns: 1fr;
   }
 }
+/* ================================================= */
+/* ================= BRAND AREA ==================== */
 
-
-
-/* 
-
-.brand__wrp {
-    padding: 65px;
-    background: var(--gradient-bg);
-    margin-top: -85px;
-    position: relative;
-    z-index: 1;
+.brand-area {
+  position: relative;
+  margin-top: -60px;     /* better overlap */
+  z-index: 20;
 }
- */
-/* 
+
+/* container */
+.brand-area .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ================= BRAND STRIP ================= */
+.brand__wrp {
+  position: relative;
+  background: linear-gradient(90deg, #3b6df3, #2f5edb);
+  /* padding: 10px 28px;         */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  height: 250px;
+}
+
+/* ================= BG SHAPE ================= */
+
 .brand__shape {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    opacity: 0.3;
+  position: absolute;
+  right: 0;          /* keep inside container */
+  top: 0;
+  height: 100%;
+  opacity: 0.25;     /* more visible */
+  z-index: 1;
+}
+
+.brand__shape img {
+  height: 100%;
+  width: auto;
+}
+
+/* .brand__shape {
+   position: absolute;
+  right: -30px;
+  top: -30px;
+  height: 60%;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.brand__shape img {
+  height: 100%;
+  width: auto;
 } */
 
-/* img, svg {
-    vertical-align: middle;
-} */
+/* ================= SLIDER ================= */
 
-/* .swiper-pointer-events {
-    touch-action: pan-y;
-} */
-/* .swiper {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    z-index: 1;
-} */
+.brand__slider {
+  position: relative;
+  z-index: 2;
+}
+
+.brand__slider .swiper-wrapper {
+  align-items: center;
+}
+
+.brand__slider .swiper-slide {
+  height: auto !important;
+  display: flex;
+  align-items: center;
+   justify-content: center;
+}
+
+/* ================= BRAND LOGO ================= */
+
+.brand__image {
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+  height: -60%;            /* take full height of swiper slide */
+  padding: 0;              /* remove extra space */
+  padding-bottom: 350px;
+}
+
+.brand__image img {
+  max-height: 32px;        /* keep logo small */
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .brand__wrp {
+    padding: 10px 20px;
+  }
+
+  .brand__image {
+    height: 22px;
+  }
+
+  .brand__image img {
+    max-height: 16px;
+  }
+}

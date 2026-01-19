@@ -22,7 +22,9 @@ import AboutArea from "./assets/JS_file/About_Area";
 import CounterArea from "./assets/JS_file/Counter_Area";
 import Case_Area from "./assets/JS_file/Case_Area";
 import OfferArea from "./assets/JS_file/Offer_Area";
-import BrandArea from "./assets/JS_file/Brand_Area";
+import ProcessArea from "./assets/JS_file/Process_Area";
+import TestimonialArea from "./assets/JS_file/Testimonial_Area";
+import Footer from "./assets/JS_file/Footer";
 function Home() {
   return (
     <>
@@ -38,7 +40,9 @@ function Home() {
       <CounterArea />
       <Case_Area />
       <OfferArea />
-      <BrandArea />
+      <ProcessArea />
+      <TestimonialArea />
+      <Footer />
     </>
   );
 }
