@@ -385,12 +385,12 @@
   .brand__wrp {
     height: 130px;
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 8px 10px;
   }
 
-  /* show background shape properly */
+  /* background shape */
   .brand__shape {
-    display: block;   
+    display: block;
     right: -40px;
     top: 0;
     opacity: 0.2;
@@ -401,17 +401,27 @@
     width: auto;
   }
 
-  .brand__image {
-    height: -50%;
-    padding: 0;
-    padding-bottom: 50px;
+  /* swiper slide fix */
+  .brand__slider .swiper-slide {
+    height: 100% !important;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* logo wrapper */
+  .brand__image {
+    height: -50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 550px;
     padding-top: -90px;
     font-family:kumba, sans-serif;
   }
-      .brand__image img {
+  /* logo */
+  .brand__image img {
     max-height: 22px;
     width: auto;
     display: block;

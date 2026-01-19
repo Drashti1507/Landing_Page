@@ -96,6 +96,104 @@
 
 // export default ProcessArea;
 
+// import React from "react";
+// import "../Components/Process_Area.css";
+
+// /* section icon */
+// import sectionIcon from "../images/section-title.png";
+
+// /* process images */
+// import processArrow from "../images/process-arry.png";
+// import img1 from "../images/process-image1.png";
+// import img2 from "../images/process-image2.png";
+// import img3 from "../images/process-image3.png";
+
+// const ProcessArea = () => {
+//   return (
+//     <section className="process-area">
+//       <div className="container">
+
+//         {/* ===== SECTION HEADER ===== */}
+//         <div className="process-header">
+//           <h5>
+//             <img src={sectionIcon} alt="icon" />
+//             Work Process
+//           </h5><br/>
+//           <h2>Our Development Process</h2>
+//         </div><br/><br/>
+
+//         {/* ===== PROCESS IMAGES ROW ===== */}
+//         <div className="process-row">
+
+//           <div className="process-img-wrap">
+//             <div className="process-img">
+//               <img src={img1} alt="Define Requirements" />
+//               <span>1</span>
+//             </div>
+//           </div>
+
+//           <div className="process-arrow">
+//             <img src={processArrow} alt="arrow" />
+//           </div>
+
+//           <div className="process-img-wrap">
+//             <div className="process-img">
+//               <img src={img2} alt="Design and Prototyping" />
+//               <span>2</span>
+//             </div>
+//           </div>
+
+//           <div className="process-arrow">
+//             <img src={processArrow} alt="arrow" />
+//           </div>
+
+//           <div className="process-img-wrap">
+//             <div className="process-img">
+//               <img src={img3} alt="Final Solution" />
+//               <span>3</span>
+//             </div>
+//           </div>
+
+//         </div>
+
+//         {/* ===== PROCESS TEXT ROW ===== */}
+//         <div className="process-text-row">
+
+//           <div className="process-box">
+//             <h4>Define Requirements</h4>
+//             <p>
+//               In a free hour, when our power of <br/>
+//              choice is untrammelled and when<br/>
+//               nothing prevents dolor sit amet,<br/> consectetur.
+//             </p>
+//           </div>
+
+//           <div className="process-box">
+//             <h4>Design & Prototyping</h4>
+//             <p>
+//              In a free hour, when our power of <br/>
+//              choice is untrammelled and when<br/>
+//               nothing prevents dolor sit amet,<br/> consectetur.
+//             </p>
+//           </div>
+
+//           <div className="process-box">
+//             <h4>Final Solution</h4>
+//             <p>
+//               In a free hour, when our power of <br/>
+//              choice is untrammelled and when<br/>
+//               nothing prevents dolor sit amet,<br/> consectetur.
+//             </p>
+//           </div>
+
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ProcessArea;
 import React from "react";
 import "../Components/Process_Area.css";
 
@@ -118,72 +216,79 @@ const ProcessArea = () => {
           <h5>
             <img src={sectionIcon} alt="icon" />
             Work Process
-          </h5><br/>
+          </h5>
           <h2>Our Development Process</h2>
-        </div><br/><br/>
-
-        {/* ===== PROCESS IMAGES ROW ===== */}
-        <div className="process-row">
-
-          <div className="process-img-wrap">
-            <div className="process-img">
-              <img src={img1} alt="Define Requirements" />
-              <span>1</span>
-            </div>
-          </div>
-
-          <div className="process-arrow">
-            <img src={processArrow} alt="arrow" />
-          </div>
-
-          <div className="process-img-wrap">
-            <div className="process-img">
-              <img src={img2} alt="Design and Prototyping" />
-              <span>2</span>
-            </div>
-          </div>
-
-          <div className="process-arrow">
-            <img src={processArrow} alt="arrow" />
-          </div>
-
-          <div className="process-img-wrap">
-            <div className="process-img">
-              <img src={img3} alt="Final Solution" />
-              <span>3</span>
-            </div>
-          </div>
-
         </div>
 
-        {/* ===== PROCESS TEXT ROW ===== */}
-        <div className="process-text-row">
+        {/* ===== PROCESS ITEMS ===== */}
+        <div className="process-row">
 
-          <div className="process-box">
-            <h4>Define Requirements</h4>
-            <p>
-              In a free hour, when our power of <br/>
-             choice is untrammelled and when<br/>
-              nothing prevents dolor sit amet,<br/> consectetur.
-            </p>
+          {/* ===== ITEM 1 ===== */}
+          <div className="process-item">
+
+            <div className="process-img-wrap">
+              <div className="process-img">
+                <img src={img1} alt="Define Requirements" />
+                <span>1</span>
+              </div>
+            </div>
+
+            <div className="process-box">
+              <h4>Define Requirements</h4>
+              <p>
+                In a free hour, when our power of choice is untrammelled and when
+                nothing prevents dolor sit amet, consectetur.
+              </p>
+            </div>
+
+            <div className="process-arrow">
+              <img src={processArrow} alt="arrow" />
+            </div>
+
           </div>
 
-          <div className="process-box">
-            <h4>Design & Prototyping</h4>
-            <p>
-             In a free hour, when our power of <br/>
-             choice is untrammelled and when<br/>
-              nothing prevents dolor sit amet,<br/> consectetur.
-            </p>
+          {/* ===== ITEM 2 ===== */}
+          <div className="process-item">
+
+            <div className="process-img-wrap">
+              <div className="process-img">
+                <img src={img2} alt="Design and Prototyping" />
+                <span>2</span>
+              </div>
+            </div>
+
+            <div className="process-box">
+              <h4>Design & Prototyping</h4>
+              <p>
+                In a free hour, when our power of choice is untrammelled and when
+                nothing prevents dolor sit amet, consectetur.
+              </p>
+            </div>
+
+            <div className="process-arrow">
+              <img src={processArrow} alt="arrow" />
+            </div>
+
           </div>
 
-          <div className="process-box">
-            <h4>Final Solution</h4>
-            <p>
-              In a free hour, when our power of <br/>
-             choice is untrammelled and when<br/>
-              nothing prevents dolor sit amet,<br/> consectetur.
-            </p>
+          {/* ===== ITEM 3 ===== */}
+          <div className="process-item">
+
+            <div className="process-img-wrap">
+              <div className="process-img">
+                <img src={img3} alt="Final Solution" />
+                <span>3</span>
+              </div>
+            </div>
+
+            <div className="process-box">
+              <h4>Final Solution</h4>
+              <p>
+                In a free hour, when our power of choice is untrammelled and when
+                nothing prevents dolor sit amet, consectetur.
+              </p>
+            </div>
+
           </div>
 
         </div>
