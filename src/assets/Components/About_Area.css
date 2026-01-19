@@ -86,13 +86,13 @@
 /* circle shape */
 .circle-shape {
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: 130px;
+  right: 30px;
   z-index: 1;
 }
 
 .circle-shape img {
-  width: 260px;
+  width: 250px;
 }
 
 /* ================= RIGHT CONTENT ================= */
@@ -137,8 +137,8 @@
 }
 
 .feature-item .icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: #eaf1ff;
   display: flex;
   align-items: center;

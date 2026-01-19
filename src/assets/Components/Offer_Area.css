@@ -297,7 +297,7 @@
 }
 
 .brand__image img {
-  max-height: 32px;        /* keep logo small */
+  max-height: 40px;        /* keep logo small */
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
