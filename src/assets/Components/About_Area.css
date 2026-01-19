@@ -50,7 +50,7 @@
 
 .big-image img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 /* small image */
@@ -379,5 +379,113 @@ h2 {
 
   .about__shape {
     display: none; /* hide bottom wave on very small screens */
+  }
+}
+
+/* ================= iPAD MINI FIX (ABOUT AREA) ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .about-area {
+    padding: 40px 0 150px;
+  }
+
+  /* layout */
+  .about-row {
+    gap: 40px;
+  }
+
+  /* ---------- IMAGES ---------- */
+
+  .about-images {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .big-image {
+    width: 80%;
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+    padding-left: -30px;
+  }
+
+  .big-image img {
+    width: 120%;
+  }
+
+  .sm-image {
+    width: 65%;
+    right: -80px;
+    bottom: -30px;
+    left: 245px;
+    top: 160px;
+    position: absolute;
+    z-index: 3;
+  }
+
+  .circle-shape {
+    top: 10px;
+    right: -60px;
+    z-index: 1;
+  }
+
+  .circle-shape img {
+    width: 220px;
+
+  }
+
+  .play-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  /* ---------- CONTENT ---------- */
+
+  .section-header h5 {
+    font-size: 13px;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .section-header p {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  /* ---------- FEATURES ---------- */
+
+  .about-features {
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .feature-item {
+    gap: 12px;
+  }
+
+  .feature-item .icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  /* ---------- BOTTOM ---------- */
+
+  .about-bottom {
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .btn-one {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .founder img {
+    width: 46px;
+    height: 46px;
   }
 }

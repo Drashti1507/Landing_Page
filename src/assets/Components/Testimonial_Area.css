@@ -477,12 +477,12 @@ h2 {
   /* FORM CARD */
   .talk-us__item {
     padding: 50px 40px;
-    border-radius: 12px;
+    border-radius: 0px;
   }
 
   .talk-us__item form .row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 18px;
   }
 
   .talk-us__item form .col-12 {

@@ -28,6 +28,12 @@
   opacity: 0.25;
   z-index: 1;
 }
+.offer__shadow img {
+  width: 140%;        /* increase size */
+  max-width: none;   /* allow overflow */
+  height: auto;
+}
+
 
 .offer__shape-left {
   position: absolute;
@@ -150,11 +156,11 @@
 /* ================= ICON ================= */
 
 .offer-icon {
-  width: 72px;
-  height: 72px;
+  width: 110px;
+  height: 110px;
   margin: 0 auto 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #3c72fc 0%, #102a8f 70%);
+  border-radius: 80%;
+  background: radial-gradient(circle, #3c72fc 0%, #102a8f 80%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,6 +168,10 @@
   z-index: 3;
   transition: 0.3s ease;
 }
+.offer-icon {
+  box-shadow: 0 0 50px rgba(60, 114, 252, 0.6);
+}
+
 
 .offer-icon svg {
   font-size: 32px;
@@ -170,7 +180,7 @@
 }
 
 .offer-card:hover .offer-icon {
-  box-shadow: 0 0 20px rgba(60, 114, 252, 0.9);
+   box-shadow: 0 0 40px rgba(60, 114, 252, 1);
 }
 
 /* ================= TITLE ================= */
@@ -232,7 +242,7 @@
   position: relative;
   background: linear-gradient(90deg, #3b6df3, #2f5edb);
   /* padding: 10px 28px;         */
-  border-radius: 12px;
+  border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   height: 130px;
@@ -377,7 +387,7 @@
 
   .brand__wrp {
     height: 130px;
-    border-radius: 10px;
+    border-radius: 0px;
     padding: 8px 10px;
   }
 

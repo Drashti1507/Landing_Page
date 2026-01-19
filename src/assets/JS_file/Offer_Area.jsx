@@ -33,12 +33,12 @@ import itemShapeBottom from "../images/offter-item-shape-bottom.png";
 import sectionIcon from "../images/section-title.png";
 
 const offers = [
-  { icon: <FaGlobe />, title: "Website" },
-  { icon: <FaAndroid />, title: "Android" },
-  { icon: <FaApple />, title: "IOS" },
-  { icon: <FaWatchmanMonitoring />, title: "Watch" },
-  { icon: <FaTv />, title: "TV" },
-  { icon: <FaRocket />, title: "IOT" },
+  { icon: <FaGlobe size={65} />, title: "Website" },
+  { icon: <FaAndroid size={65}/>, title: "Android" },
+  { icon: <FaApple size={65}/>, title: "IOS" },
+  { icon: <FaWatchmanMonitoring size={65}/>, title: "Watch" },
+  { icon: <FaTv size={65}/>, title: "TV" },
+  { icon: <FaRocket size={65}/>, title: "IOT" },
 ];
 
 const brands = [
