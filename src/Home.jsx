@@ -31,7 +31,7 @@ function Home() {
       <Header />
 
       {/* if header is fixed height */}
-      <div style={{ marginTop: "140px" }}>
+      <div style={{ marginTop: "120px" }}>
         <Banner_Area />
       </div>
 

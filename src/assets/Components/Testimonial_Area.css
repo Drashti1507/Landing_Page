@@ -542,3 +542,11 @@ h2 {
     position: static;
   }
 }
+@media (min-width: 853px)  {
+   .testimonial__arry-btn {
+    margin-top: -950px;
+    margin-bottom: 30px;
+    justify-content: center;
+    position: static;
+  }
+}

@@ -246,6 +246,7 @@
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   height: 130px;
+  
 }
 /* ================= BG SHAPE ================= */
 
@@ -295,7 +296,7 @@
   justify-content: center; /* horizontal center */
   height: -50%;            /* take full height of swiper slide */
   padding: 0;              /* remove extra space */
-  padding-bottom: 450px;
+  padding-bottom: 225px;
   padding-top: -90px;
   font-family:kumba, sans-serif;
 }

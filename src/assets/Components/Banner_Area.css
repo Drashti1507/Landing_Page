@@ -831,3 +831,16 @@ a {
 }
 
 }
+@media (min-width: 853px) {
+  .banner-area,
+  .swiperb,
+  .swiper-slide {
+    min-height: 45vh;
+    /* margin-top: 0;     */
+  }
+  .banner-area {
+  padding-top: 0 !important;
+   margin-top: -50px;
+}
+
+}

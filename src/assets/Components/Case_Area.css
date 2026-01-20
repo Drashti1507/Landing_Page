@@ -168,7 +168,7 @@
     justify-content:center;
     align-items:center;
     gap:10px;
-    margin-top:-25px;
+    margin-top:-155px;
 }
 .case__dot .swiper-pagination-bullet{
     width:10px;
@@ -310,4 +310,11 @@
     margin-top: -250px;
     margin-bottom: 10px;
   }
+}
+@media (min-width: 853px)  {
+   .case__dot {
+    margin-top: -750px;
+    margin-bottom: 10px;
+  }
+
 }
