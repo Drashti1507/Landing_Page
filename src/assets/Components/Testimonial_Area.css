@@ -137,7 +137,7 @@
 .talk-us__item {
   background: linear-gradient(180deg, #3b6cff, #2747b5);
   padding: 60px;
-  border-radius: 10px;
+  /* border-radius: 0px; */
   color: #fff;
   max-width: 100%;
   width: 100%;
@@ -157,7 +157,7 @@
   padding: 12px 14px;
   border: none;
   outline: none;
-  border-radius: 4;
+  /* border-radius: 4; */
   text-decoration: solid black 1px;
 }
 
@@ -187,7 +187,7 @@
   color: #fff;
   border: none;
   font-weight: 600;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   cursor: pointer;
 }
 /* ================= HEADER ================= */
@@ -203,6 +203,7 @@
   color: #3b6cff;
   font-weight: 600;
   font-size: 14px;
+  text-align: left;
 }
 
 .t-header h2 {
@@ -224,11 +225,12 @@
 .testimonial__item {
   background: #fff;
   padding: 40px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   position: relative;
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
   width: 100%;
   margin-top: 0;
+  max-height: 190%;
 }
 
 .testimonial__item .coma {
@@ -241,9 +243,9 @@
 }
 
 .testimonial__item img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 70%;
 }
 
 .testi-info h4 {
@@ -425,8 +427,8 @@ h2 {
 
   .col-left,
   .col-right {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   /* FORM FULL WIDTH FEEL */
@@ -450,75 +452,93 @@ h2 {
   }
 }
 
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
   .testimonial-area {
-    padding: 60px 0;
+    padding: 80px 0;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh; /* keep bg visible */
+    display: flex;
+    align-items: center; /* vertical center */
   }
 
   .testimonial-container {
-    padding-left: 24px;
-    padding-right: 24px;
+    width: 100%;
   }
 
-  /* STACK BUT KEEP NICE SPACING */
   .trow {
     flex-direction: column;
-    gap: 50px;
+    gap: 60px;
+    align-items: left;
   }
 
   .col-left,
   .col-right {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding-left: 0;
+    width: 100%;
+    max-width: 650px;  /* center content nicely */
+    margin: auto;
   }
 
   /* FORM CARD */
   .talk-us__item {
-    padding: 50px 40px;
-    border-radius: 0px;
+    padding: 45px 35px;
+    /* border-radius: 12px; */
   }
 
   .talk-us__item form .row {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 16px;
   }
 
   .talk-us__item form .col-12 {
     grid-column: span 2;
   }
+  .t-header {
+    text-align: center;
+  }
 
-  /* HEADER */
+  .t-header h5 {
+    /* justify-content: center; */
+    font-size: 20px;
+  }
+
   .t-header h2 {
-    font-size: 30px;
+    font-size: 40px;
+    text-align: left;
   }
 
   .t-header p {
-    font-size: 14px;
+    max-width: 90%;
+    font-size: 18px;
+    text-align: left;
+    /* margin: auto; */
   }
 
   /* TESTIMONIAL CARD */
   .testimonial__item {
-    padding: 35px 30px;
+    padding: 30px 25px;
+    /* text-align: center; */
   }
 
-  .testimonial__item img {
-    width: 65px;
-    height: 65px;
-  }
-
-  .testi-info h4 {
-    font-size: 17px;
+  .client-info {
+    /* justify-content: center; */
+    text-align: left;
+     /* text-align: center;  */
   }
 
   .review-text {
-    font-size: 14px;
+    font-size: 18px;
+    text-align: left;
   }
 
-  /* ARROWS — PLACE BELOW SLIDER */
   .testimonial__arry-btn {
-    margin-top: -90%;
+    margin-top: -750px;
+    margin-bottom: 30px;
     justify-content: center;
+    position: static;
   }
 }

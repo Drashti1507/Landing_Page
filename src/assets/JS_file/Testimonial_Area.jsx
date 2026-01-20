@@ -120,8 +120,8 @@ const TestimonialArea = () => {
               </div>
 
               <p className="review-text">
-                “ Consectetur adipiscing elit. Integer nunc viverra laoreet est
-                porta pretium metus aliquam eget maecenas porta is nunc viverra ”
+                “ Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium
+                  metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”
               </p>
 
             </div>
@@ -146,8 +146,8 @@ const TestimonialArea = () => {
               </div>
 
               <p className="review-text">
-                “ Consectetur adipiscing elit. Integer nunc viverra laoreet est
-                porta pretium metus aliquam eget maecenas porta is nunc viverra ”
+                “ Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium
+                  metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”
               </p>
 
             </div>

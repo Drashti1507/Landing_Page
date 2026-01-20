@@ -658,7 +658,6 @@ a {
   background: #1e6cff;          /* blue */
 }
 
-/* ================= iPHONE SE FIX (very small screens) ================= */
 @media (max-width: 375px) {
 
   /* center content */
@@ -725,8 +724,6 @@ a {
   }
 }
 
-
-/* ================= BANNER — iPAD MINI ================= */
 @media (min-width: 768px) and (max-width: 1024px) {
 
   /* keep full height but avoid overflow */
@@ -810,6 +807,7 @@ a {
     transform: scale(0.9);
   }
 }
+
 @media (min-width: 629px) and (max-width: 693px) {
   .banner-area,
   .swiperb,
@@ -817,5 +815,18 @@ a {
    {
     min-height: 75vh;
   }
+
+}
+
+@media (min-width: 609px) {
+  .banner-area,
+  .swiperb,
+  .swiper-slide {
+    min-height: 55vh;
+    margin-top: 0;    
+  }
+  .banner-area {
+  padding-top: 0 !important;
+}
 
 }

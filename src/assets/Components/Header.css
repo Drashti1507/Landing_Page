@@ -1,7 +1,7 @@
 /* space for fixed header */
 body {
-  padding-top: 140px;
-  font-family: Arial, sans-serif;
+  padding-top: 0px;
+  font-family : sans-serif ;
 }
 
 /* ================= HEADER ================= */
@@ -12,6 +12,12 @@ body {
   width: 100%;
   z-index: 9999;
 }
+/* .header-area {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+} */
 
 /* ================= TOP BAR ================= */
 
@@ -215,4 +221,57 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+}
+@media (max-width: 768px) {
+
+  .top-bar {
+    display: none;
+    height: 0;
+    padding: 0;
+    margin: 0;
+     margin-top: -45px;
+  }
+
+  /* reduce navbar height */
+  .nav-bar {
+    padding: 0 16px;
+    min-height: 60px;
+  }
+
+  /* reduce logo shape height */
+  .logo-box {
+    padding: 18px 40px;
+    margin-left: -16px;
+    /* height: 120px; */
+    max-height: max-content;
+  }
+
+  .logo-img {
+    height: 45px;
+  }
+
+  /* mobile menu spacing */
+  .nav-menu {
+    padding: 18px 0;
+  }
+
+}
+@media (max-width: 906px) {
+  .top-bar {
+    display: none;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+    .nav-bar {
+    padding: 0 20px;
+    min-height: 60px;
+    max-width: 1120px;
+  }
+
+  element.style{
+        margin-top: -30px;
+  }
+
 }
