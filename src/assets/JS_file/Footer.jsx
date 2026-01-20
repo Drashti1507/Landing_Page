@@ -24,30 +24,35 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  useEffect(() => {
-    const scrollBtn = document.querySelector(".scroll-up");
-    const path = document.querySelector(".scroll-up path");
-    const pathLength = path.getTotalLength();
+useEffect(() => {
+  const scrollBtn = document.querySelector(".scroll-up");
+  const path = document.querySelector(".scroll-up path");
 
-    path.style.strokeDasharray = pathLength;
-    path.style.strokeDashoffset = pathLength;
+  if (!scrollBtn || !path) return;
 
-    const updateProgress = () => {
-      const scroll = window.scrollY;
-      const height = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = pathLength - (scroll * pathLength) / height;
+  const pathLength = path.getTotalLength();
 
-      path.style.strokeDashoffset = progress;
+  path.style.strokeDasharray = pathLength;
+  path.style.strokeDashoffset = pathLength;
 
-      if (scroll > 200) scrollBtn.classList.add("active-scroll");
-      else scrollBtn.classList.remove("active-scroll");
-    };
+  const updateProgress = () => {
+    const scroll = window.scrollY;
+    const height =
+      document.documentElement.scrollHeight - window.innerHeight;
 
-    window.addEventListener("scroll", updateProgress);
-    updateProgress();
+    const progress = pathLength - (scroll * pathLength) / height;
+    path.style.strokeDashoffset = progress;
 
-    return () => window.removeEventListener("scroll", updateProgress);
-  }, []);
+    if (scroll > 200) scrollBtn.classList.add("active-scroll");
+    else scrollBtn.classList.remove("active-scroll");
+  };
+
+  window.addEventListener("scroll", updateProgress);
+  updateProgress();
+
+  return () => window.removeEventListener("scroll", updateProgress);
+}, []);
+
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -168,13 +173,27 @@ const Footer = () => {
       </footer>
 
       {/* SCROLL UP */}
-           <div className="scroll-up" onClick={scrollToTop}>
+           {/* <div className="scroll-up" onClick={scrollToTop}>
     <svg viewBox="-1 -1 102 102">
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
 
     <BiUpArrowAlt className="scroll-icon" />
-    </div>
+    </div> */}
+  {/* SCROLL UP */}
+<div className="scroll-up" onClick={scrollToTop}>
+  <svg
+    className="scroll-circle svg-content"
+    width="100%"
+    height="100%"
+    viewBox="-1 -1 102 102"
+  >
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
+
+  <BiUpArrowAlt className="scroll-icon" />
+</div>
+
     </>
   );
 };

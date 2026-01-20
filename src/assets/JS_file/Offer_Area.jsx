@@ -33,12 +33,12 @@ import itemShapeBottom from "../images/offter-item-shape-bottom.png";
 import sectionIcon from "../images/section-title.png";
 
 const offers = [
-  { icon: <FaGlobe />, title: "Website" },
-  { icon: <FaAndroid />, title: "Android" },
-  { icon: <FaApple />, title: "IOS" },
-  { icon: <FaWatchmanMonitoring />, title: "Watch" },
-  { icon: <FaTv />, title: "TV" },
-  { icon: <FaRocket />, title: "IOT" },
+  { icon: <FaGlobe size={65} />, title: "Website" },
+  { icon: <FaAndroid size={65}/>, title: "Android" },
+  { icon: <FaApple size={65}/>, title: "IOS" },
+  { icon: <FaWatchmanMonitoring size={65}/>, title: "Watch" },
+  { icon: <FaTv size={65}/>, title: "TV" },
+  { icon: <FaRocket size={65}/>, title: "IOT" },
 ];
 
 const brands = [
@@ -73,7 +73,7 @@ const OfferArea = () => {
               </h5>
 
               <h2 className="text-white">
-                Enhance And Pioneer Using <br /> Technology Trends
+                Enhance And Pioneer Using Technology Trends
               </h2>
             </div>
 
@@ -127,12 +127,12 @@ const OfferArea = () => {
               breakpoints={{
                 0: { slidesPerView: 2 },
                 576: { slidesPerView: 3 },
-                768: { slidesPerView: 4 },
+                768: { slidesPerView: 3 },
                 992: { slidesPerView: 5 },
               }}
             >
               {brands.map((img, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="brand-slide">
                   <div className="brand__image">
                     <img src={img} alt={`brand-${index + 1}`} />
                   </div>

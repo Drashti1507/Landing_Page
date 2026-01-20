@@ -4,6 +4,7 @@
   position: relative;
   margin-top: -120px;
   z-index: 5;
+  font-family: kumbh-sans, sans-serif;
 }
 
 /* custom container */
@@ -18,7 +19,7 @@
 .counter-box {
   position: relative;
   background: linear-gradient(90deg, #3b6df6 0%, #2c4fb8 100%);
-  border-radius: 14px;
+  border-radius: 0px;
 
   padding: 70px 60px;
 
@@ -56,14 +57,14 @@
   display: flex;
   align-items: center;
   justify-content: center; /* center each item */
-  gap: 16px;
+  gap: 8px;
   color: #fff;
   z-index: 2;
   text-align: center;
 }
 
 .counter-item img {
-  width: 48px;
+  width: 52px;
 }
 
 .counter-text h3 {
@@ -105,5 +106,47 @@
   .counter-shape {
     right: -80px;
     bottom: -80px;
+  }
+}
+
+/* ================= SMALL MOBILE (iPhone SE, 360px) ================= */
+@media (max-width: 375px) {
+
+  .counter-area {
+    margin-top: -60px; 
+    font-family: kumbh-sans, sans-serif;
+  }
+
+  .counter-box {
+    grid-template-columns: 1fr;
+    padding: 35px 18px;
+    border-radius: 0px;
+    gap: 26px;
+  }
+
+  .counter-item {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .counter-item img {
+    width: 50px;
+  }
+
+  .counter-text h3 {
+    font-size: 28px;
+  }
+
+  .counter-text p {
+    font-size: 16px;
+  }
+
+  .counter-shape {
+    right: -120px;
+    bottom: -120px;
+  }
+
+  .counter-shape img {
+    width: 280px;
   }
 }

@@ -365,7 +365,7 @@ a {
 .footer__copyright a:hover {
   color: #4d7cff;
 }
-/* 
+
 .scroll-up {
   position: fixed;
   right: 25px;
@@ -373,10 +373,10 @@ a {
   width: 55px;
   height: 55px;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
   z-index: 999;
+  opacity: 0;
+  visibility: visible;
+  transition: 0.3s;
 }
 
 .scroll-up.active-scroll {
@@ -384,61 +384,21 @@ a {
   visibility: visible;
 }
 
-.scroll-up svg {
-  transform: rotate(-90deg);
-}
-
-.scroll-up path {
-  fill: none;
+.scroll-circle path {
   stroke: #4d7cff;
   stroke-width: 4;
+  fill: none;
 }
 
 .scroll-icon {
   position: absolute;
   inset: 0;
   margin: auto;
-  font-size: 18px;
+  font-size: 22px;
   color: #4d7cff;
-  background-color: #4d7cff;
-} */
-.scroll-up {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  width: 55px;
-  height: 55px;
-  cursor: pointer;
-  z-index: 999;
-
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* circle progress */
-.scroll-up svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotate(0deg);
-}
-
-.scroll-up path {
-  fill: none;
-  /* stroke: #4d7cff; */
-  stroke-width: 0.5;
-  background-color: #4d7cff;
-  /* color: #fff; */
-}
-
-/* UP ICON */
-.scroll-icon {
-  font-size: 26px;   /*  icon size */
-  color: #4d7cff;
-  z-index: 2;
-  background: #fff; /* optional */
-  border-radius: 50%;
 }
 
 .footer__item {

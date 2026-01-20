@@ -127,7 +127,7 @@ function CaseArea() {
       {/* ===== HEADER ===== */}
       <div className="container">
         <div className="case-header-row">
-          <div className="section-header">
+          <div className="c-header">
             <h5>
               <img className="me-1" src={sectionIcon} alt="icon" />
               FROM OUR CASE STUDIES
