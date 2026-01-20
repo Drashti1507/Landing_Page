@@ -1,0 +1,313 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.pt-120 { padding-top: 120px; }
+.pb-120 { padding-bottom: 120px; }
+.mt-60 { margin-top: 15px; } 
+
+
+.text-center { text-align: center; }
+
+.container {
+    width: 100%;
+    padding: 0 12px;
+    margin: auto;
+}
+
+@media (min-width: 576px){.container{max-width:540px}}
+@media (min-width: 768px){.container{max-width:720px}}
+@media (min-width: 992px){.container{max-width:960px}}
+@media (min-width:1200px){.container{max-width:1140px}}
+
+.case-area { overflow: hidden; }
+
+/* ===== HEADER ===== */
+
+.case-header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+    gap:20px;
+}
+
+.c-header h5{
+    color:#1e6cff;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.c-header h2{ font-weight:700; }
+
+@media(max-width:767px){
+  .case-header-row{flex-direction:column;align-items:flex-start}
+}
+
+/* ===== BUTTON ===== */
+
+.btn-one{
+    padding:14px 26px;
+    background:linear-gradient(90deg,#1e6cff,#3f8cff);
+    color:#fff;
+    transition:.3s;
+    text-decoration:none;
+    font-weight:600;
+}
+.btn-one:hover{background:#000}
+
+/* ===== SLIDER ===== */
+
+.case__slider{
+    padding: 0;
+}
+
+.case-area .swiper{
+    padding-bottom: 10px; /* small space before dots */
+}
+
+/* ===== CARD ===== */
+
+.case__item{
+    position:relative;
+    border-radius:0px;
+    overflow:hidden;
+     width:100%;
+
+}
+
+.case__image img{
+    width:100%;
+    display:block;
+    transition:.5s;
+}
+
+.case__item:hover img{transform:scale(1.08)}
+
+.case__item::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.3),transparent);
+    z-index:1;
+}
+
+/* ===== CONTENT ===== */
+
+.case__content{
+    position:absolute;
+    left:22px;
+    right:22px;        /* keeps content within card width */
+    bottom:28px;
+    z-index:2;
+    text-align:left;  /* force left alignment */
+}
+
+
+.case__content span{
+    display:inline-block;
+    margin-bottom:8px;
+    color:#1e6cff;
+    font-size:13px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.case__content h3{ margin:0; }
+
+.case__content h3 a{
+    color:#fff;
+    font-size:24px;          /* bigger title */
+    font-weight:800;        /* bold */
+    letter-spacing:0.4px;   /* stylish spacing */
+    line-height:1.3;
+    transition:.3s;
+    text-decoration:none;
+    text-shadow:0 4px 12px rgba(0,0,0,0.6); /* premium look */
+}
+
+.case__content h3 a:hover{color:#1e6cff}
+
+/* ===== ARROW ===== */
+
+.case__btn{
+    position:absolute;
+    right:22px;
+    bottom:28px;
+    z-index:2;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(15px);
+    transition:.4s;
+}
+
+.case__btn i{
+    width:44px;
+    height:44px;
+    background:#1e6cff;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    border-radius:0px;
+}
+
+.case__item:hover .case__btn{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* ===== DOTS ===== */
+
+.case__dot{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:-25px;
+}
+.case__dot .swiper-pagination-bullet{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    border:1px solid #1e6cff;
+    background:transparent;
+    opacity:1;
+}
+
+.case__dot .swiper-pagination-bullet-active{
+    background:#1e6cff;
+}
+
+/* ================= CASE AREA — SMALL MOBILE (iPhone SE) ================= */
+@media (max-width: 375px) {
+
+  .pt-120 { padding-top: 70px; }
+  .pb-120 { padding-bottom: 70px; }
+
+  .case-header-row {
+    margin-bottom: 35px;
+    gap: 14px;
+  }
+
+  .c-header h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .btn-one {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  /* slider cards */
+  .case__content {
+    left: 14px;
+    right: 14px;
+    bottom: 18px;
+  }
+
+  .case__content span {
+    font-size: 11px;
+  }
+
+  .case__content h3 a {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .case__btn i {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .case__dot {
+    margin-top: -215px;
+    margin-bottom: 10px;
+  }
+  
+}
+@media (hover: none) {
+  .case__btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+/* ================= CASE AREA — iPAD MINI ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .pt-120 { padding-top: 90px; }
+  .pb-120 { padding-bottom: 90px; }
+
+  .case-header-row {
+    margin-bottom: 45px;
+    gap: 20px;
+  }
+
+  .c-header h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .btn-one {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  /* CARD CONTENT */
+  .case__content {
+    left: 18px;
+    right: 18px;
+    bottom: 22px;
+  }
+
+  .case__content span {
+    font-size: 12px;
+  }
+
+  .case__content h3 a {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  /* ARROW — ALWAYS VISIBLE FOR TOUCH */
+  .case__btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .case__btn i {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* DOTS POSITION */
+  .case__dot {
+    margin-top: -565px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (hover: none) {
+  .case__btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media (min-width: 629px) and (max-width: 693px) {
+   .case__dot {
+    margin-top: -250px;
+    margin-bottom: 10px;
+  }
+}

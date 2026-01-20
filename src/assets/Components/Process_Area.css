@@ -1,0 +1,138 @@
+.process-area {
+  padding: 120px 0;
+  background: #fcfcfd;
+  color: #050b2e;
+  width: 100%;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ===== HEADER ===== */
+.process-header {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.process-header h5 {
+  color: #0a6fd4;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.process-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* ===== PROCESS ROW ===== */
+.process-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* ===== PROCESS ITEM ===== */
+.process-item {
+  width: 280px;
+  text-align: center;
+  position: relative;
+}
+
+/* IMAGE */
+.process-img {
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+  background: #fff;
+}
+
+.process-img::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1.5px dashed #3b6cff;
+  border-radius: 50%;
+  animation: rotateCircle 12s linear infinite;
+}
+
+.process-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* NUMBER */
+.process-img span {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background: #3b6cff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  line-height: 42px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+}
+
+/* TEXT */
+.process-box {
+  margin-top: 20px;
+}
+
+.process-box h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.process-box p {
+  font-size: 15px;
+  line-height: 26px;
+}
+
+/* ARROW */
+.process-arrow {
+  position: absolute;
+  right: -55px;
+  top: 70px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 991px) {
+
+  .process-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-item {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .process-arrow {
+    position: static;
+    transform: rotate(90deg);
+    margin: 15px auto 0;
+  }
+}
+
+@keyframes rotateCircle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
