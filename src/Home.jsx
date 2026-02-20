@@ -15,7 +15,6 @@
 // export default Home;
 
 
-import Header from "./assets/JS_file/Header";
 import Banner_Area from "./assets/JS_file/Banner_Area";
 import ServiceArea from "./assets/JS_file/Service_Area";
 import AboutArea from "./assets/JS_file/About_Area";
@@ -28,13 +27,7 @@ import Footer from "./assets/JS_file/Footer";
 function Home() {
   return (
     <>
-      <Header />
-
-      {/* if header is fixed height */}
-      <div style={{ marginTop: "120px" }}>
-        <Banner_Area />
-      </div>
-
+      <Banner_Area />
       <ServiceArea />
       <AboutArea />
       <CounterArea />
