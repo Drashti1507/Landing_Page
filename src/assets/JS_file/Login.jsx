@@ -70,6 +70,21 @@ function Login({ onLoginSuccess, onPageChange }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = {};
+    newErrors.email = validateField("email", form.email);
+    newErrors.password = validateField("password", form.password);
+
+    setErrors(newErrors);
+    setTouched({
+      email: true,
+      password: true
+    });
+
+    if (newErrors.email || newErrors.password) {
+      return;
+    }
+
     setLoading(true);
 
     try {

@@ -40,6 +40,15 @@ function ForgotPassword({ onPageChange }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const error = validateEmail(email);
+    setEmailError(error);
+    setTouched(true);
+
+    if (error) {
+      return;
+    }
+
     setLoading(true);
 
     try {

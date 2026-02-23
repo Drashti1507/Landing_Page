@@ -105,19 +105,17 @@ function ResetPassword({ onPageChange, token }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (form.newPassword !== form.confirmPassword) {
-      toast.error("Passwords do not match", {
-        position: "top-right",
-        autoClose: 5000,
-      });
-      return;
-    }
+    const newErrors = {};
+    newErrors.newPassword = validateField("newPassword", form.newPassword);
+    newErrors.confirmPassword = validateField("confirmPassword", form.confirmPassword);
 
-    if (form.newPassword.length < 6) {
-      toast.error("Password must be at least 6 characters long", {
-        position: "top-right",
-        autoClose: 5000,
-      });
+    setErrors(newErrors);
+    setTouched({
+      newPassword: true,
+      confirmPassword: true
+    });
+
+    if (newErrors.newPassword || newErrors.confirmPassword) {
       return;
     }
 

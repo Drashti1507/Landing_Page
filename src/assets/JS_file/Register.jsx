@@ -94,6 +94,11 @@ const Register = ({ onPageChange }) => {
     newErrors.password = validateField("password", formData.password);
 
     setErrors(newErrors);
+    setTouched({
+      name: true,
+      email: true,
+      password: true
+    });
 
     if (newErrors.name || newErrors.email || newErrors.password) {
       toast.error("Please fix the errors in the form");
