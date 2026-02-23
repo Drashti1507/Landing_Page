@@ -102,7 +102,8 @@ const TestimonialArea = () => {
 
           {/* SLIDE 1 */}
           <SwiperSlide>
-            <div className="testimonial__item">
+            {/* <div> */}
+              <div className="testimonial__item">
 
               <FaQuoteRight className="coma" />
 
@@ -123,13 +124,15 @@ const TestimonialArea = () => {
                 “ Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium
                   metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”
               </p>
-
+              <div className="testimonial__arry-btn">
+                <button className="testimonial-prev">‹</button>
+                <button className="testimonial-next active">›</button>
+              </div>
             </div>
           </SwiperSlide>
-
-          {/* SLIDE 2 */}
           <SwiperSlide>
-            <div className="testimonial__item">
+            <div>
+              <div className="testimonial__item">
 
               <FaQuoteRight className="coma" />
 
@@ -150,16 +153,15 @@ const TestimonialArea = () => {
                   metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo ”
               </p>
 
-            </div>
-          </SwiperSlide>
-
-        </Swiper>
-
-              {/* ===== ARROWS CENTER ===== */}
+              </div>
               <div className="testimonial__arry-btn">
                 <button className="testimonial-prev">‹</button>
                 <button className="testimonial-next active">›</button>
               </div>
+            </div>
+          </SwiperSlide>
+
+        </Swiper>
 
             </div>
 

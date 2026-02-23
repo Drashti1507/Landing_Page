@@ -177,7 +177,7 @@ function CaseArea() {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
         {/* DOTS */}
         <div className="case__dot-wrap">
