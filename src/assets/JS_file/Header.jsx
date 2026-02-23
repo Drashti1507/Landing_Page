@@ -77,7 +77,7 @@ function Header({ onPageChange, isLoggedIn, userRole, onLogout }) {
           {!isLoggedIn ? (
             <>
               <a href="#" onClick={(e) => handleNavClick(e, "login")}><span>Login</span></a>
-              <a href="#" onClick={(e) => handleNavClick(e, "register")}><span>Register</span></a>
+              {/* <a href="#" onClick={(e) => handleNavClick(e, "register")}><span>Register</span></a> */}
             </>
           ) : (
             <a
