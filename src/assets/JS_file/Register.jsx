@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   FaUser,
   FaEnvelope,
@@ -10,8 +11,11 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../css/Register.css";
+// import registerImage from "../images/register-bg-img.jpg";
+import registerImage from "../images/login-bg-image.jpg";
 
-const Register = () => {
+
+const Register = ({ onPageChange }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +23,7 @@ const Register = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -27,46 +32,56 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    toast.success("Account Created Successfully 🎉");
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/auth/register",
+        formData
+      );
 
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-    });
+      toast.success(response.data.message);
+
+      // Clear form
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+      });
+
+      // Optional: Redirect to login after 1.5 sec
+      setTimeout(() => {
+        onPageChange("login");
+      }, 1500);
+
+    } catch (error) {
+      toast.error(
+        error.response?.data?.msg || "Registration failed"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-  <div className="register-container">
-    <div className="register-card fade-in">
+  <div className="register-page">
+    <div className="register-card">
 
-      {/* LEFT SIDE IMAGE */}
-      <div className="register-image-section">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
-          alt="Register Illustration"
-        />
-        <h3>Welcome to Our Platform</h3>
-        <p>Create your account and manage everything easily.</p>
+      {/* LEFT SIDE IMAGE ONLY */}
+      <div className="left-image-section">
+        <img src={registerImage} alt="Register" />
       </div>
 
       {/* RIGHT SIDE FORM */}
-      <div className="register-form-section">
+      <div className="right-form-section">
         <div className="register-header">
-          <div className="header-flex">
-            <div className="register-icon-box">
-              <FaUserPlus />
-            </div>
-            <h2>Create Account</h2>
-          </div>
+          <h2>Create Account</h2>
           <p>Join us to manage your services effectively</p>
         </div>
 
         <form onSubmit={handleSubmit}>
-          {/* Name */}
           <div className="form-group">
             <div className="input-wrapper">
               <FaUser className="inside-icon" />
@@ -81,7 +96,6 @@ const Register = () => {
             </div>
           </div>
 
-          {/* Email */}
           <div className="form-group">
             <div className="input-wrapper">
               <FaEnvelope className="inside-icon" />
@@ -96,7 +110,6 @@ const Register = () => {
             </div>
           </div>
 
-          {/* Password */}
           <div className="form-group">
             <div className="input-wrapper">
               <FaLock className="inside-icon" />
@@ -117,100 +130,27 @@ const Register = () => {
             </div>
           </div>
 
-          <button type="submit" className="register-btn">
-            Create My Account
+          <button type="submit" className="register-btn" disabled={loading}>
+            {loading ? "Creating..." : "Create Account"}
           </button>
         </form>
-
         <div className="login-link-container">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account?{" "}
+          <span
+            className="login-link-text"
+            onClick={() => onPageChange("login")}
+          >
+            Login
+          </span>
         </div>
       </div>
+      
     </div>
+    
 
     <ToastContainer position="top-right" autoClose={2000} />
   </div>
 );
-  // return (
-  //   <div className="register-container">
-  //     <div className="register-card fade-in">
-  //       {/* Header */}
-  //       <div className="register-header">
-  //         <div className="header-flex">
-  //           <div className="register-icon-box">
-  //             <FaUserPlus />
-  //           </div>
-  //           <h2>Create Account</h2>
-  //         </div>
-  //         <p>Join us to manage your services effectively</p>
-  //       </div>
-
-  //       {/* Form */}
-  //       <form onSubmit={handleSubmit}>
-  //         {/* Name */}
-  //         <div className="form-group">
-  //           <div className="input-wrapper">
-  //             <FaUser className="inside-icon" />
-  //             <input
-  //               type="text"
-  //               name="name"
-  //               placeholder="Full Name"
-  //               value={formData.name}
-  //               onChange={handleChange}
-  //               required
-  //             />
-  //           </div>
-  //         </div>
-
-  //         {/* Email */}
-  //         <div className="form-group">
-  //           <div className="input-wrapper">
-  //             <FaEnvelope className="inside-icon" />
-  //             <input
-  //               type="email"
-  //               name="email"
-  //               placeholder="Email Address"
-  //               value={formData.email}
-  //               onChange={handleChange}
-  //               required
-  //             />
-  //           </div>
-  //         </div>
-
-  //         {/* Password */}
-  //         <div className="form-group">
-  //           <div className="input-wrapper">
-  //             <FaLock className="inside-icon" />
-  //             <input
-  //               type={showPassword ? "text" : "password"}
-  //               name="password"
-  //               placeholder="Password"
-  //               value={formData.password}
-  //               onChange={handleChange}
-  //               required
-  //             />
-  //             <span
-  //               className="password-toggle"
-  //               onClick={() => setShowPassword(!showPassword)}
-  //             >
-  //               {showPassword ? <FaEyeSlash /> : <FaEye />}
-  //             </span>
-  //           </div>
-  //         </div>
-
-  //         <button type="submit" className="register-btn">
-  //           Create My Account
-  //         </button>
-  //       </form>
-
-  //       <div className="login-link-container">
-  //         Already have an account? <a href="/login">Login</a>
-  //       </div>
-  //     </div>
-
-  //     <ToastContainer position="top-right" autoClose={2000} />
-  //   </div>
-  // );
 };
 
 export default Register;
