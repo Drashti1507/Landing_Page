@@ -18,9 +18,54 @@ function Login({ onLoginSuccess, onPageChange }) {
 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
+  const validateField = (name, value) => {
+    let error = "";
+    
+    if (name === "email") {
+      if (!value.trim()) {
+        error = "Email is required";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        error = "Please enter a valid email";
+      }
+    } else if (name === "password") {
+      if (!value) {
+        error = "Password is required";
+      } else if (value.length < 6) {
+        error = "Password must be at least 6 characters";
+      }
+    }
+    
+    return error;
+  };
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors({
+        ...errors,
+        [name]: error
+      });
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched({
+      ...touched,
+      [name]: true
+    });
+
+    const error = validateField(name, value);
+    setErrors({
+      ...errors,
+      [name]: error
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -74,7 +119,7 @@ function Login({ onLoginSuccess, onPageChange }) {
           <form onSubmit={handleSubmit}>
             {/* Email */}
             <div className="form-group">
-              <div className="input-wrapper">
+              <div className={`input-wrapper ${touched.email && errors.email ? "error" : ""}`}>
                 <FaEnvelope className="inside-icon" />
                 <input
                   name="email"
@@ -82,13 +127,15 @@ function Login({ onLoginSuccess, onPageChange }) {
                   required
                   placeholder="Email Address"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
+              {touched.email && errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
             {/* Password */}
             <div className="form-group">
-              <div className="input-wrapper">
+              <div className={`input-wrapper ${touched.password && errors.password ? "error" : ""}`}>
                 <FaLock className="inside-icon" />
                 <input
                   name="password"
@@ -96,6 +143,7 @@ function Login({ onLoginSuccess, onPageChange }) {
                   required
                   placeholder="Password"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
                 <span
                   className="password-toggle"
@@ -104,6 +152,7 @@ function Login({ onLoginSuccess, onPageChange }) {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
+              {touched.password && errors.password && <span className="error-message">{errors.password}</span>}
             </div>
 
             <div className="forgot-password">

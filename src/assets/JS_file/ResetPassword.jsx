@@ -15,6 +15,55 @@ function ResetPassword({ onPageChange, token }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isValidToken, setIsValidToken] = useState(null);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
+  const validateField = (name, value) => {
+    let error = "";
+    
+    if (name === "newPassword") {
+      if (!value) {
+        error = "Password is required";
+      } else if (value.length < 6) {
+        error = "Password must be at least 6 characters";
+      }
+    } else if (name === "confirmPassword") {
+      if (!value) {
+        error = "Please confirm your password";
+      } else if (value !== form.newPassword) {
+        error = "Passwords do not match";
+      }
+    }
+    
+    return error;
+  };
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors({
+        ...errors,
+        [name]: error
+      });
+    }
+  };
+
+  const handleFieldBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched({
+      ...touched,
+      [name]: true
+    });
+
+    const error = validateField(name, value);
+    setErrors({
+      ...errors,
+      [name]: error
+    });
+  };
 
   useEffect(() => {
     if (!token) {
@@ -51,9 +100,7 @@ function ResetPassword({ onPageChange, token }) {
     verifyToken();
   }, [token]);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -191,14 +238,15 @@ function ResetPassword({ onPageChange, token }) {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <div className="input-wrapper">
+              <div className={`input-wrapper ${touched.newPassword && errors.newPassword ? "error" : ""}`}>
                 <FaLock className="inside-icon" />
                 <input
                   name="newPassword"
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter new password"
                   value={form.newPassword}
-                  onChange={handleChange}
+                  onChange={handleFieldChange}
+                  onBlur={handleFieldBlur}
                   required
                 />
                 <span
@@ -208,17 +256,19 @@ function ResetPassword({ onPageChange, token }) {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
+              {touched.newPassword && errors.newPassword && <span className="error-message">{errors.newPassword}</span>}
             </div>
 
             <div className="form-group">
-              <div className="input-wrapper">
+              <div className={`input-wrapper ${touched.confirmPassword && errors.confirmPassword ? "error" : ""}`}>
                 <FaLock className="inside-icon" />
                 <input
                   name="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm password"
                   value={form.confirmPassword}
-                  onChange={handleChange}
+                  onChange={handleFieldChange}
+                  onBlur={handleFieldBlur}
                   required
                 />
                 <span
@@ -228,6 +278,7 @@ function ResetPassword({ onPageChange, token }) {
                   {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
+              {touched.confirmPassword && errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
             </div>
 
             <div className="password-requirements">

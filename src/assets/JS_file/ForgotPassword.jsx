@@ -9,6 +9,34 @@ function ForgotPassword({ onPageChange }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [resetToken, setResetToken] = useState(null);
+  const [emailError, setEmailError] = useState("");
+  const [touched, setTouched] = useState(false);
+
+  const validateEmail = (value) => {
+    if (!value.trim()) {
+      return "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      return "Please enter a valid email";
+    }
+    return "";
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    
+    if (touched) {
+      const error = validateEmail(value);
+      setEmailError(error);
+    }
+  };
+
+  const handleEmailBlur = (e) => {
+    const value = e.target.value;
+    setTouched(true);
+    const error = validateEmail(value);
+    setEmailError(error);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,16 +118,18 @@ function ForgotPassword({ onPageChange }) {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <div className="input-wrapper">
+              <div className={`input-wrapper ${touched && emailError ? "error" : ""}`}>
                 <FaEnvelope className="inside-icon" />
                 <input
                   type="email"
                   placeholder="Enter your email address"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
+                  onBlur={handleEmailBlur}
                   required
                 />
               </div>
+              {touched && emailError && <span className="error-message">{emailError}</span>}
             </div>
 
             <button
