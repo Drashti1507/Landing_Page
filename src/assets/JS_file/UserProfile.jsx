@@ -1,37 +1,38 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { FaUserCircle, FaCamera, FaSpinner, FaArrowLeft, FaUser, FaEnvelope, FaLock, FaSave, FaBell } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaCamera,
+  FaSpinner,
+  FaArrowLeft,
+  FaUser,
+  FaEnvelope,
+  FaLock,
+  FaSave,
+} from "react-icons/fa";
 import "../Components/UserProfile.css";
 
-const UserProfile = ({ onPageChange }) => {
+const UserProfile = ({ onPageChange, userData, onProfileUpdate }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    name: userData?.name || "",
+    email: userData?.email || "",
     password: "",
-    profilePic: "",
+    profilePic: userData?.profilePic || "",
   });
-  const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
 
+  // Sync state if userData changes
   useEffect(() => {
-    fetchProfile();
-  }, []);
-
-  const fetchProfile = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/auth/me", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const { name, email, profilePic } = response.data;
-      setFormData({ ...formData, name, email, profilePic: profilePic || "" });
-      setLoading(false);
-    } catch (error) {
-      toast.error("Failed to load profile");
-      setLoading(false);
+    if (userData) {
+      setFormData((prev) => ({
+        ...prev,
+        name: userData.name || "",
+        email: userData.email || "",
+        profilePic: userData.profilePic || "",
+      }));
     }
-  };
+  }, [userData]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,14 +59,10 @@ const UserProfile = ({ onPageChange }) => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.put(
-        "http://localhost:5000/auth/update-profile",
-        formData,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      
+      await axios.put("http://localhost:5000/auth/update-profile", formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
       toast.update(toastId, {
         render: "Profile updated successfully!",
         type: "success",
@@ -73,7 +70,10 @@ const UserProfile = ({ onPageChange }) => {
         autoClose: 3000,
       });
 
-      setTimeout(() => window.location.reload(), 1500);
+      // Notify App.jsx to refresh user data globally
+      if (onProfileUpdate) {
+        onProfileUpdate();
+      }
     } catch (error) {
       toast.update(toastId, {
         render: error.response?.data?.msg || "Failed to update profile",
@@ -85,10 +85,6 @@ const UserProfile = ({ onPageChange }) => {
       setUpdating(false);
     }
   };
-
-  if (loading) {
-    return <div className="loading-container"><FaSpinner className="spinner" /></div>;
-  }
 
   return (
     <div className="profile-page-container">
@@ -126,16 +122,22 @@ const UserProfile = ({ onPageChange }) => {
               onChange={handleFileChange}
             />
           </div>
-          <div style={{textAlign: 'center'}}>
-            <h2 style={{margin: '0 0 5px 0', fontSize: '20px'}}>{formData.name}</h2>
-            <p style={{margin: 0, color: '#64748b', fontSize: '14px'}}>{formData.email}</p>
+          <div style={{ textAlign: "center" }}>
+            <h2 style={{ margin: "0 0 5px 0", fontSize: "20px" }}>
+              {formData.name}
+            </h2>
+            <p style={{ margin: 0, color: "#64748b", fontSize: "14px" }}>
+              {formData.email}
+            </p>
           </div>
         </div>
 
         <div className="profile-main-content">
           <form className="profile-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label><FaUser style={{color: '#2563eb'}} /> Full Name</label>
+              <label>
+                <FaUser style={{ color: "#2563eb" }} /> Full Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -147,7 +149,9 @@ const UserProfile = ({ onPageChange }) => {
             </div>
 
             <div className="form-group">
-              <label><FaEnvelope style={{color: '#2563eb'}} /> Email Address</label>
+              <label>
+                <FaEnvelope style={{ color: "#2563eb" }} /> Email Address
+              </label>
               <input
                 type="email"
                 name="email"
@@ -159,7 +163,9 @@ const UserProfile = ({ onPageChange }) => {
             </div>
 
             <div className="form-group full-width">
-              <label><FaLock style={{color: '#2563eb'}} /> Change Password</label>
+              <label>
+                <FaLock style={{ color: "#2563eb" }} /> Change Password
+              </label>
               <input
                 type="password"
                 name="password"
@@ -174,7 +180,19 @@ const UserProfile = ({ onPageChange }) => {
               className="profile-update-btn"
               disabled={updating}
             >
-              {updating ? <><FaSpinner className="spinner" style={{fontSize: '16px'}} /> Updating...</> : <><FaSave /> Save Changes</>}
+              {updating ? (
+                <>
+                  <FaSpinner
+                    className="spinner"
+                    style={{ fontSize: "16px" }}
+                  />{" "}
+                  Updating...
+                </>
+              ) : (
+                <>
+                  <FaSave /> Save Changes
+                </>
+              )}
             </button>
           </form>
         </div>

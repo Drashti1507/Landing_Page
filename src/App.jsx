@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
+import axios from "axios";
 import Home from "./Home";
 import Login from "./assets/JS_file/Login";
 import Register from "./assets/JS_file/Register";
@@ -21,6 +22,25 @@ function App() {
   const [userRole, setUserRole] = useState(null);
   const [resetToken, setResetToken] = useState(null);
   const [pageChangeData, setPageChangeData] = useState(null);
+  const [userData, setUserData] = useState({ name: "My Profile", profilePic: "", email: "" });
+
+  const fetchUserData = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return;
+      
+      const response = await axios.get("http://localhost:5000/auth/me", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUserData({
+        name: response.data.name,
+        profilePic: response.data.profilePic,
+        email: response.data.email,
+      });
+    } catch (error) {
+      console.error("Failed to fetch user data in App");
+    }
+  };
 
   //  Check login when page refresh and extract reset token from URL
   useEffect(() => {
@@ -30,6 +50,7 @@ function App() {
     if (token) {
       setIsLoggedIn(true);
       setUserRole(role);
+      fetchUserData();
     }
 
     // Check if URL contains reset token
@@ -81,6 +102,7 @@ function App() {
   const handleLoginSuccess = (role) => {
     setIsLoggedIn(true);
     setUserRole(role);
+    fetchUserData(); // Fetch data immediately after login
     // Navigate to profile page after successful login
     setCurrentPage("user-profile");
   };
@@ -92,6 +114,7 @@ function App() {
 
     setIsLoggedIn(false);
     setUserRole(null);
+    setUserData({ name: "My Profile", profilePic: "", email: "" });
     setCurrentPage("home");
   };
 
@@ -102,9 +125,10 @@ function App() {
         isLoggedIn={isLoggedIn}
         userRole={userRole}
         onLogout={handleLogout}
+        userData={userData}
       />
 
-      <div style={{ marginTop: "120px" }}>
+      <div style={{ marginTop: "135px" }}>
 
         {currentPage === "home" && (
           <Home userRole={userRole} />
@@ -154,6 +178,8 @@ function App() {
           <UserProfile
             userRole={userRole}
             onPageChange={handlePageChange}
+            userData={userData}
+            onProfileUpdate={fetchUserData}
           />
         )}
 
