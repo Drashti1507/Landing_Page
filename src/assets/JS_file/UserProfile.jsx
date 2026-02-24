@@ -93,12 +93,7 @@ const UserProfile = ({ onPageChange }) => {
   return (
     <div className="profile-page-container">
       <div className="profile-page-header">
-        <div className="profile-header-left">
-          <h1>Account Settings</h1>
-          <div className="profile-notification-icon">
-            <FaBell />
-          </div>
-        </div>
+        <h1>Account Settings</h1>
         {onPageChange && (
           <button className="back-btn" onClick={() => onPageChange("home")}>
             <FaArrowLeft /> Back to Home

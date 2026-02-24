@@ -178,3 +178,51 @@ function App() {
 }
 
 export default App;
+
+
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import "./App.css";
+
+// import Home from "./Home";
+// import Login from "./assets/JS_file/Login";
+// import Register from "./assets/JS_file/Register";
+// import ForgotPassword from "./assets/JS_file/ForgotPassword";
+// import ResetPassword from "./assets/JS_file/ResetPassword";
+// import Header from "./assets/JS_file/Header";
+// import AdminDashboard from "./assets/JS_file/AdminDashboard";
+// import UserDashboard from "./assets/JS_file/UserDashboard";
+// import UserProfile from "./assets/JS_file/UserProfile";
+// import QuotePage from "./assets/JS_file/QuotePage";
+// import ContactPage from "./assets/JS_file/ContactPage";
+
+// function App() {
+//   return (
+//     <Router>
+//       <Header />
+
+//       <div style={{ marginTop: "120px" }}>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/login" element={<Login />} />
+//           <Route path="/register" element={<Register />} />
+//           <Route path="/forgot-password" element={<ForgotPassword />} />
+          
+//           {/* THIS IS THE IMPORTANT PART */}
+//           <Route path="/reset-password/:token" element={<ResetPassword />} />
+
+//           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+//           <Route path="/user-dashboard" element={<UserDashboard />} />
+//           <Route path="/user-profile" element={<UserProfile />} />
+//           <Route path="/quote" element={<QuotePage />} />
+//           <Route path="/contact" element={<ContactPage />} />
+//         </Routes>
+//       </div>
+
+//       <ToastContainer position="top-right" autoClose={3000} />
+//     </Router>
+//   );
+// }
+
+// export default App;

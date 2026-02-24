@@ -44,7 +44,6 @@ function Header({ onPageChange, isLoggedIn, userRole, onLogout }) {
       setUserData({
         name: response.data.name,
         profilePic: response.data.profilePic,
-        email: response.data.email,
       });
     } catch (error) {
       console.error("Failed to fetch user data for header");
