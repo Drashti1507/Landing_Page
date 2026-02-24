@@ -120,6 +120,9 @@ function ResetPassword({ onPageChange, token }) {
     }
 
     setLoading(true);
+    const toastId = toast.loading("Resetting your password...", {
+      position: "top-right",
+    });
 
     try {
       console.log("Sending reset request with token:", token);
@@ -135,8 +138,10 @@ function ResetPassword({ onPageChange, token }) {
       
       console.log("Reset response:", response.data);
 
-      toast.success(response.data.msg, {
-        position: "top-right",
+      toast.update(toastId, {
+        render: response.data.msg,
+        type: "success",
+        isLoading: false,
         autoClose: 5000,
       });
 
@@ -152,8 +157,10 @@ function ResetPassword({ onPageChange, token }) {
     } catch (error) {
       console.error(" Reset error:", error);
       const errorMsg = error.response?.data?.msg || "Reset failed. Please try again.";
-      toast.error(errorMsg, {
-        position: "top-right",
+      toast.update(toastId, {
+        render: errorMsg,
+        type: "error",
+        isLoading: false,
         autoClose: 5000,
       });
     } finally {
@@ -279,7 +286,7 @@ function ResetPassword({ onPageChange, token }) {
               {touched.confirmPassword && errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
             </div>
 
-            <div className="password-requirements">
+            {/* <div className="password-requirements">
               <p>Password requirements:</p>
               <ul>
                 <li className={form.newPassword.length >= 6 ? "valid" : ""}>
@@ -289,7 +296,7 @@ function ResetPassword({ onPageChange, token }) {
                   Passwords match
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             <button
               type="submit"

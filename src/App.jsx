@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 import Home from "./Home";
@@ -9,6 +11,7 @@ import ResetPassword from "./assets/JS_file/ResetPassword";
 import Header from "./assets/JS_file/Header";
 import AdminDashboard from "./assets/JS_file/AdminDashboard";
 import UserDashboard from "./assets/JS_file/UserDashboard";
+import UserProfile from "./assets/JS_file/UserProfile";
 import QuotePage from "./assets/JS_file/QuotePage";
 import ContactPage from "./assets/JS_file/ContactPage";
 
@@ -41,10 +44,14 @@ function App() {
       const parts = pathname.split("/reset-password/");
       if (parts.length > 1) {
         const token = parts[1].trim();
-        // console.log("Extracted token:", token);
-        // console.log("Token length:", token.length);
         setResetToken(token);
         setCurrentPage("reset-password");
+        
+        // Logout user when clicking reset link
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        setIsLoggedIn(false);
+        setUserRole(null);
       }
     }
   }, []);
@@ -58,6 +65,15 @@ function App() {
         setResetToken(data.token);
       }
     }
+    
+    // Auto logout when entering reset-password page
+    if (page === "reset-password") {
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
+      setIsLoggedIn(false);
+      setUserRole(null);
+    }
+    
     window.scrollTo(0, 0);
   };
 
@@ -65,7 +81,8 @@ function App() {
   const handleLoginSuccess = (role) => {
     setIsLoggedIn(true);
     setUserRole(role);
-    setCurrentPage("home");
+    // Navigate to profile page after successful login
+    setCurrentPage("user-profile");
   };
 
   //  Logout
@@ -126,8 +143,15 @@ function App() {
           />
         )}
 
-        {currentPage === "user-profile" && (
+        {currentPage === "user-dashboard" && (
           <UserDashboard
+            userRole={userRole}
+            onPageChange={handlePageChange}
+          />
+        )}
+
+        {currentPage === "user-profile" && (
+          <UserProfile
             userRole={userRole}
             onPageChange={handlePageChange}
           />
@@ -148,6 +172,7 @@ function App() {
         )}
 
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

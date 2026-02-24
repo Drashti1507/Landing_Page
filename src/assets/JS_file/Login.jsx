@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import {
   FaSignInAlt,
   FaEye,
@@ -98,12 +99,21 @@ function Login({ onLoginSuccess, onPageChange }) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", data.role);
 
+      toast.success("Login successful!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+
       onLoginSuccess(data.role);
 
     } catch (error) {
-      alert(
+      toast.error(
         error.response?.data?.msg ||
-        "Login failed. Please check your credentials."
+        "Login failed. Please check your credentials.",
+        {
+          position: "top-right",
+          autoClose: 4000,
+        }
       );
     } finally {
       setLoading(false);

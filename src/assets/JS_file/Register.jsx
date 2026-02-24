@@ -8,8 +8,7 @@ import {
   FaEyeSlash,
   FaUserPlus,
 } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import "../css/Register.css";
 // import registerImage from "../images/register-bg-img.jpg";
 import registerImage from "../images/login-bg-image.jpg";
@@ -223,9 +222,6 @@ const Register = ({ onPageChange }) => {
       </div>
       
     </div>
-    
-
-    <ToastContainer position="top-right" autoClose={2000} />
   </div>
 );
 };
